@@ -29,7 +29,7 @@ export const Navbar = () => {
           <span style={{ color: "hsl(270 70% 60%)" }}>A</span>mirda Varshini M N
         </a>
 
-        <ul className="hidden items-center gap-8 text-sm text-muted-foreground">
+        <ul className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
           {links.map((l) => (
             <li key={l.href}>
               <a href={l.href} className="hover:text-foreground transition-colors">
@@ -39,9 +39,16 @@ export const Navbar = () => {
           ))}
         </ul>
 
+        <a
+          href="#contact"
+          className="hidden md:inline-flex px-5 py-2.5 rounded-full bg-accent text-accent-foreground text-sm font-medium hover:opacity-90 transition-opacity"
+        >
+          Hire Me
+        </a>
+
         <button
           aria-label="Toggle menu"
-          className="p-2 rounded-md border border-border"
+          className="md:hidden p-2 rounded-md border border-border"
           onClick={() => setOpen(!open)}
         >
           <div className="w-5 h-0.5 bg-foreground mb-1.5" />
@@ -51,7 +58,7 @@ export const Navbar = () => {
       </nav>
 
       {open && (
-        <div className="mt-4 mx-4 rounded-2xl glass-card p-6 flex flex-col gap-4">
+        <div className="md:hidden mt-4 mx-4 rounded-2xl glass-card p-6 flex flex-col gap-4">
           {links.map((l) => (
             <a
               key={l.href}

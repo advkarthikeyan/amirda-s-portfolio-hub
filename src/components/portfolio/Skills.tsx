@@ -1,22 +1,22 @@
-const groups = [
+const groups: { title: string; color: string; items: string[] }[] = [
   {
     title: "Backend",
-    color: "primary",
+    color: "text-primary",
     items: [".NET 8", "C#", "Web API", "Entity Framework", "ADO.NET", "MVC"],
   },
   {
     title: "Frontend",
-    color: "accent",
+    color: "text-accent",
     items: ["Angular 12", "JavaScript", "jQuery", "HTML", "CSS", "Bootstrap"],
   },
   {
     title: "Databases",
-    color: "teal",
+    color: "text-teal",
     items: ["SQL Server", "Oracle", "PostgreSQL", "MongoDB"],
   },
   {
     title: "Tools & DevOps",
-    color: "primary",
+    color: "text-primary",
     items: ["Azure DevOps", "GitHub", "TFS", "DevExpress", "Putty"],
   },
 ];
@@ -36,7 +36,7 @@ export const Skills = () => {
               key={g.title}
               className="glass-card rounded-3xl p-6 hover:border-primary/40 hover:-translate-y-1 transition-all"
             >
-              <p className={`font-mono-tag mb-5 text-${g.color}`}>{g.title}</p>
+              <p className={`font-mono-tag mb-5 ${g.color}`}>{g.title}</p>
               <ul className="space-y-2.5">
                 {g.items.map((it) => (
                   <li key={it} className="text-foreground/90 flex items-center gap-2">

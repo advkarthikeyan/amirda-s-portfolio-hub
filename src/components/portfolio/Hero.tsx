@@ -23,7 +23,7 @@ export const Hero = () => {
             I<em className="text-gradient not-italic font-semibold ml-3 md:ml-5">ship</em> software.
           </h1>
 
-          <p className="text-lg text-muted-foreground max-w-xl mb-10 leading-relaxed tracking-normal text-justify-none [word-spacing:normal]">
+          <p className="text-lg text-muted-foreground max-w-xl mb-10 text-left leading-7 tracking-normal whitespace-normal [word-spacing:0] sm:leading-relaxed">
             <span className="block mb-3 font-medium text-foreground">
               A Senior .NET-Angular Full Stack Developer (7+ Years)
             </span>

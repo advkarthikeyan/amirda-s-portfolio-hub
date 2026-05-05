@@ -7,12 +7,12 @@ export const Hero = () => {
       <div className="container grid lg:grid-cols-[1.3fr_1fr] gap-12 lg:gap-16 items-center">
         <div className="animate-fade-up">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-card/40 mb-8">
-            <span className="w-2 h-2 rounded-full bg-teal animate-glow-pulse" />
+            <span className="w-2 h-2 rounded-full bg-destructive-foreground animate-glow-pulse" />
             <span className="text-xs text-muted-foreground">Open to Full Stack opportunities</span>
           </div>
 
           <p className="font-mono-tag text-muted-foreground mb-6">
-            <span className="text-primary">.NET</span> · <span className="text-accent">Angular</span> · <span className="text-teal">Full Stack</span>
+            <span className="text-primary">.NET</span> · <span className="text-accent">Angular</span> · <span className="text-destructive-foreground">Full Stack</span>
           </p>
 
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl leading-[0.95] mb-8">
@@ -24,8 +24,9 @@ export const Hero = () => {
           </h1>
 
           <p className="text-lg text-muted-foreground max-w-xl mb-10 leading-relaxed">
-            Hi, I'm Amirda Varshini — a Full Stack Developer with 7+ years building enterprise
-            applications across utility, education and finance domains using .NET, Angular and SQL.
+            A Senior .NET-Angular Full Stack Developer (7+ Years)
+            <br />
+            Innovative software engineer dedicated to high-quality data and operational excellence. Expert at bridging the gap between complex backend logic and intuitive frontend usability, utilizing analytical insights to solve business challenges and improve system performance.
           </p>
 
           <div className="flex flex-wrap items-center gap-4 mb-10">
@@ -122,7 +123,7 @@ const FloatingTag = ({
   const colorClass = {
     primary: "text-primary",
     accent: "text-accent",
-    teal: "text-teal",
+    teal: "text-destructive-foreground",
   }[color];
   return (
     <div className={`absolute glass-card rounded-2xl px-4 py-3 hidden md:block ${className}`}>

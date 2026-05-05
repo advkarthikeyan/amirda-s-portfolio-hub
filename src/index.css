@@ -8,50 +8,50 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Deep purple cosmic palette inspired by reference */
-    --background: 270 45% 7%;
-    --foreground: 280 20% 96%;
+    /* Jet Black + Forest Green + Off-White palette */
+    --background: 0 0% 0%;
+    --foreground: 210 17% 98%;
 
-    --card: 270 40% 11%;
-    --card-foreground: 280 20% 96%;
+    --card: 0 0% 6%;
+    --card-foreground: 210 17% 98%;
 
-    --popover: 270 40% 11%;
-    --popover-foreground: 280 20% 96%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 210 17% 98%;
 
-    --primary: 265 90% 66%;
-    --primary-foreground: 270 45% 7%;
+    --primary: 152 41% 30%;
+    --primary-foreground: 210 17% 98%;
 
-    --secondary: 270 30% 16%;
-    --secondary-foreground: 280 20% 96%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 210 17% 98%;
 
-    --muted: 270 25% 14%;
-    --muted-foreground: 270 12% 65%;
+    --muted: 0 0% 9%;
+    --muted-foreground: 210 10% 70%;
 
-    --accent: 350 95% 68%;
-    --accent-foreground: 270 45% 7%;
+    --accent: 2 47% 51%;
+    --accent-foreground: 210 17% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 270 30% 20%;
-    --input: 270 30% 18%;
-    --ring: 265 90% 66%;
+    --border: 0 0% 15%;
+    --input: 0 0% 13%;
+    --ring: 152 41% 30%;
 
     --radius: 1rem;
 
-    --teal: 170 80% 55%;
+    --teal: 152 41% 45%;
 
     /* Gradients */
-    --gradient-hero: radial-gradient(ellipse at top left, hsl(265 70% 25% / 0.6), transparent 60%),
-                     radial-gradient(ellipse at bottom right, hsl(350 70% 30% / 0.45), transparent 55%),
-                     linear-gradient(135deg, hsl(270 50% 8%), hsl(270 55% 5%));
-    --gradient-text: linear-gradient(135deg, hsl(265 95% 75%), hsl(290 90% 70%));
-    --gradient-accent: linear-gradient(135deg, hsl(265 90% 66%), hsl(290 85% 60%));
-    --gradient-card: linear-gradient(160deg, hsl(270 35% 13% / 0.9), hsl(270 40% 9% / 0.9));
+    --gradient-hero: radial-gradient(ellipse at top left, hsl(152 41% 18% / 0.6), transparent 60%),
+                     radial-gradient(ellipse at bottom right, hsl(2 47% 25% / 0.45), transparent 55%),
+                     linear-gradient(135deg, hsl(0 0% 2%), hsl(0 0% 0%));
+    --gradient-text: linear-gradient(135deg, hsl(152 41% 55%), hsl(2 47% 65%));
+    --gradient-accent: linear-gradient(135deg, hsl(152 41% 30%), hsl(2 47% 51%));
+    --gradient-card: linear-gradient(160deg, hsl(0 0% 8% / 0.9), hsl(0 0% 4% / 0.9));
 
     /* Shadows / glow */
-    --shadow-glow: 0 0 60px hsl(265 90% 66% / 0.35);
-    --shadow-card: 0 20px 60px -20px hsl(270 80% 5% / 0.8);
+    --shadow-glow: 0 0 60px hsl(152 41% 30% / 0.4);
+    --shadow-card: 0 20px 60px -20px hsl(0 0% 0% / 0.9);
 
     --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
 

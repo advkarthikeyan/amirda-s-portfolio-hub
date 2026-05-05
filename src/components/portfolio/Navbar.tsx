@@ -24,12 +24,12 @@ export const Navbar = () => {
         scrolled ? "py-3 backdrop-blur-xl bg-background/70 border-b border-border" : "py-6"
       }`}
     >
-      <nav className="container flex items-center justify-between">
-        <a href="#home" className="font-display text-2xl font-semibold">
+      <nav className="container flex items-center justify-between gap-8">
+        <a href="#home" className="font-display text-2xl font-semibold mr-auto">
           <span style={{ color: "hsl(270 70% 60%)" }}>A</span>mirda Varshini M N
         </a>
 
-        <ul className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
+        <ul className="hidden md:flex items-center gap-6 lg:gap-8 text-sm text-muted-foreground">
           {links.map((l) => (
             <li key={l.href}>
               <a href={l.href} className="hover:text-foreground transition-colors">

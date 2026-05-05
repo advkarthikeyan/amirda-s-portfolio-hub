@@ -26,7 +26,7 @@ export const Navbar = () => {
     >
       <nav className="container flex items-center justify-between">
         <a href="#home" className="font-display text-2xl font-semibold">
-          Amirda<span className="text-gradient">.</span>
+          <span style={{ color: "hsl(270 70% 60%)" }}>A</span>mirda Varshini M N
         </a>
 
         <ul className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">

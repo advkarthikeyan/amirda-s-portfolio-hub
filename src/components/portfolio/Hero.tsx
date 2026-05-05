@@ -83,8 +83,8 @@ export const Hero = () => {
         <div className="marquee font-mono-tag text-muted-foreground">
           {Array.from({ length: 2 }).map((_, i) => (
             <div key={i} className="flex gap-12 pr-12">
-              {[".NET 8", "ANGULAR", "C#", "SQL SERVER", "WEB API", "ENTITY FRAMEWORK", "MONGODB", "AZURE DEVOPS", "JAVASCRIPT", "MVC"].map((s) => (
-                <span key={s} className="whitespace-nowrap">
+              {[".NET 8", "ANGULAR", "C#", "SQL SERVER", "WEB API", "ENTITY FRAMEWORK", "MONGODB", "AZURE DEVOPS", "JAVASCRIPT", "MVC"].map((s, idx) => (
+                <span key={s} className="whitespace-nowrap" style={idx % 2 === 1 ? { color: "#f24545" } : undefined}>
                   {s} <span className="text-primary">·</span>
                 </span>
               ))}

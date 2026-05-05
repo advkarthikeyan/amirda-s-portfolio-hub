@@ -1,3 +1,5 @@
+import { useReveal } from "@/hooks/use-reveal";
+
 const groups: { title: string; color: string; items: string[] }[] = [
   {
     title: "Backend",
@@ -31,26 +33,13 @@ export const Skills = () => {
         </h2>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-          {groups.map((g) => (
-            <div
-              key={g.title}
-              className="glass-card rounded-3xl p-6 hover:border-primary/40 hover:-translate-y-1 transition-all"
-            >
-              <p className={`font-mono-tag mb-5 ${g.color}`}>{g.title}</p>
-              <ul className="space-y-2.5">
-                {g.items.map((it) => (
-                  <li key={it} className="text-foreground/90 flex items-center gap-2">
-                    <span className="w-1 h-1 rounded-full bg-foreground/40" />
-                    {it}
-                  </li>
-                ))}
-              </ul>
-            </div>
+          {groups.map((g, i) => (
+            <SkillCard key={g.title} group={g} index={i} />
           ))}
         </div>
 
         {/* Education */}
-        <div className="mt-16 glass-card rounded-3xl p-8 md:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div className="mt-16 glass-card rounded-3xl p-8 md:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-4 hover-lift">
           <div>
             <p className="font-mono-tag text-teal mb-2">// Education</p>
             <h3 className="font-display text-2xl md:text-3xl">
@@ -62,5 +51,26 @@ export const Skills = () => {
         </div>
       </div>
     </section>
+  );
+};
+
+const SkillCard = ({ group: g, index }: { group: typeof groups[number]; index: number }) => {
+  const { ref, visible } = useReveal<HTMLDivElement>();
+  return (
+    <div
+      ref={ref}
+      className={`glass-card rounded-3xl p-6 hover:border-primary/40 hover-lift reveal ${visible ? "is-visible" : ""}`}
+      style={{ transitionDelay: `${index * 100}ms` }}
+    >
+              <p className={`font-mono-tag mb-5 ${g.color}`}>{g.title}</p>
+              <ul className="space-y-2.5">
+                {g.items.map((it) => (
+                  <li key={it} className="text-foreground/90 flex items-center gap-2 transition-transform hover:translate-x-1">
+                    <span className="w-1 h-1 rounded-full bg-foreground/40" />
+                    {it}
+                  </li>
+                ))}
+              </ul>
+    </div>
   );
 };

@@ -1,3 +1,5 @@
+import { useReveal } from "@/hooks/use-reveal";
+
 const experiences = [
   {
     role: "Software Developer",
@@ -54,10 +56,22 @@ export const Experience = () => {
 
         <div className="space-y-6">
           {experiences.map((exp, i) => (
-            <article
-              key={i}
-              className="glass-card rounded-3xl p-6 md:p-10 hover:border-primary/40 transition-all group"
-            >
+            <ExperienceCard key={i} exp={exp} index={i} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const ExperienceCard = ({ exp, index }: { exp: typeof experiences[number]; index: number }) => {
+  const { ref, visible } = useReveal<HTMLElement>();
+  return (
+    <article
+      ref={ref}
+      className={`glass-card rounded-3xl p-6 md:p-10 hover:border-primary/40 hover-lift group reveal ${visible ? "is-visible" : ""}`}
+      style={{ transitionDelay: `${index * 120}ms` }}
+    >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-6">
                 <div>
                   <h3 className="font-display text-2xl md:text-3xl mb-1">{exp.role}</h3>
@@ -86,16 +100,12 @@ export const Experience = () => {
                 {exp.stack.map((s) => (
                   <span
                     key={s}
-                    className="text-xs px-3 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/20"
+                    className="text-xs px-3 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/20 hover-scale"
                   >
                     {s}
                   </span>
                 ))}
               </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
+    </article>
   );
 };

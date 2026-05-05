@@ -32,7 +32,7 @@ export const Navbar = () => {
         <ul className="hidden md:flex items-center gap-6 lg:gap-8 text-sm text-muted-foreground mr-auto">
           {links.map((l) => (
             <li key={l.href}>
-              <a href={l.href} className="hover:text-foreground transition-colors">
+              <a href={l.href} className="story-link hover:text-foreground transition-colors">
                 {l.label}
               </a>
             </li>

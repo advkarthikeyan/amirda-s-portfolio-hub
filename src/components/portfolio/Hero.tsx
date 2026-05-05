@@ -33,13 +33,13 @@ export const Hero = () => {
           <div className="flex flex-wrap items-center gap-4 mb-10">
             <a
               href="#experience"
-              className="px-7 py-3.5 rounded-full bg-gradient-to-r from-primary to-[hsl(290_85%_60%)] text-primary-foreground font-medium hover:shadow-[var(--shadow-glow)] transition-all"
+              className="px-7 py-3.5 rounded-full bg-gradient-to-r from-primary to-[hsl(290_85%_60%)] text-primary-foreground font-medium hover:shadow-[var(--shadow-glow)] hover-scale transition-all"
             >
               View My Work →
             </a>
             <a
               href="#contact"
-              className="px-7 py-3.5 rounded-full border border-border text-foreground hover:bg-card transition-colors"
+              className="px-7 py-3.5 rounded-full border border-border text-foreground hover:bg-card hover-scale transition-all"
             >
               Get in Touch
             </a>
@@ -74,9 +74,9 @@ export const Hero = () => {
               />
             </div>
 
-            <FloatingTag className="-top-4 -left-6" label="Experience" value="7+ Years" color="primary" />
-            <FloatingTag className="top-1/2 -right-8" label="Stack" value=".NET 8" color="accent" />
-            <FloatingTag className="-bottom-4 left-4" label="Frontend" value="Angular" color="teal" />
+            <FloatingTag className="-top-4 -left-6 hover-scale" label="Experience" value="7+ Years" color="primary" />
+            <FloatingTag className="top-1/2 -right-8 hover-scale" label="Stack" value=".NET 8" color="accent" />
+            <FloatingTag className="-bottom-4 left-4 hover-scale" label="Frontend" value="Angular" color="teal" />
           </div>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import { Linkedin, Mail, Phone, Briefcase } from "lucide-react";
+import { useReveal } from "@/hooks/use-reveal";
 
 export const Contact = () => {
   const channels = [
@@ -40,25 +41,31 @@ export const Contact = () => {
         </p>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {channels.map((c) => {
-            const Icon = c.icon;
-            return (
-              <a
-                key={c.label}
-                href={c.href}
-                target={c.href.startsWith("http") ? "_blank" : undefined}
-                rel="noopener noreferrer"
-                className="glass-card rounded-2xl p-6 hover:border-primary/50 hover:-translate-y-1 transition-all group"
-              >
-                <Icon className="w-6 h-6 text-primary mb-4 group-hover:scale-110 transition-transform" />
-                <p className="font-mono-tag text-muted-foreground mb-1">{c.label}</p>
-                <p className="font-medium break-all">{c.value}</p>
-              </a>
-            );
-          })}
+          {channels.map((c, i) => (
+            <ContactCard key={c.label} channel={c} index={i} />
+          ))}
         </div>
       </div>
     </section>
+  );
+};
+
+const ContactCard = ({ channel: c, index }: { channel: { icon: any; label: string; value: string; href: string }; index: number }) => {
+  const Icon = c.icon;
+  const { ref, visible } = useReveal<HTMLAnchorElement>();
+  return (
+    <a
+      ref={ref}
+      href={c.href}
+      target={c.href.startsWith("http") ? "_blank" : undefined}
+      rel="noopener noreferrer"
+      className={`glass-card rounded-2xl p-6 hover:border-primary/50 hover-lift group reveal ${visible ? "is-visible" : ""}`}
+      style={{ transitionDelay: `${index * 100}ms` }}
+    >
+      <Icon className="w-6 h-6 text-primary mb-4 group-hover:scale-110 group-hover:rotate-6 transition-transform" />
+      <p className="font-mono-tag text-muted-foreground mb-1">{c.label}</p>
+      <p className="font-medium break-all">{c.value}</p>
+    </a>
   );
 };
 

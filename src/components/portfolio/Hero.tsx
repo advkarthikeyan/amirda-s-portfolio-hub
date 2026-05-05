@@ -23,9 +23,10 @@ export const Hero = () => {
             I<em className="text-gradient not-italic font-semibold ml-3 md:ml-5">ship</em> software.
           </h1>
 
-          <p className="text-lg text-muted-foreground max-w-xl mb-10 leading-relaxed">
-            A Senior .NET-Angular Full Stack Developer (7+ Years)
-            <br />
+          <p className="text-lg text-muted-foreground max-w-xl mb-10 leading-relaxed tracking-normal text-justify-none [word-spacing:normal]">
+            <span className="block mb-3 font-medium text-foreground">
+              A Senior .NET-Angular Full Stack Developer (7+ Years)
+            </span>
             Innovative software engineer dedicated to high-quality data and operational excellence. Expert at bridging the gap between complex backend logic and intuitive frontend usability, utilizing analytical insights to solve business challenges and improve system performance.
           </p>
 

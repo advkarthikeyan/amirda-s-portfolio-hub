@@ -14,19 +14,19 @@ export const About = () => {
           A developer who turns <span className="text-gradient italic">ideas</span> into production.
         </h2>
         <div className="grid lg:grid-cols-2 gap-12 mt-12">
-          <div className="space-y-5 text-lg text-muted-foreground leading-relaxed">
+          <div className="space-y-5 text-lg text-muted-foreground leading-relaxed animate-fade-up text-justify">
             <p>
               I'm Amirda Varshini — a Full Stack Developer based in India with seven years of
-              experience building enterprise applications for utilities, education and finance.
+              experience building enterprise applications for utilities, education and 
             </p>
-            <p>
+            <p className="animate-fade-up text-justify">
               I've worked across the complete software development lifecycle — from idea to
               production deployment — at <span className="text-foreground">Cognizant</span>,
               <span className="text-foreground"> Aspire Systems</span> and
               <span className="text-foreground"> Sierra ODC</span>, building everything from utility
               infrastructure systems to education platforms and invoice engines.
             </p>
-            <p>
+            <p className="animate-fade-up text-justify">
               I focus on operational efficiency, data accuracy and continuous process improvement
               backed by analytics-driven insights.
             </p>

@@ -1,3 +1,5 @@
+import { useReveal } from "@/hooks/use-reveal";
+
 const experiences = [
   {
     role: "Software Developer",

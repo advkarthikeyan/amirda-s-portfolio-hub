@@ -127,7 +127,7 @@ const FloatingTag = ({
     teal: "text-destructive-foreground",
   }[color];
   return (
-    <div className={`absolute glass-card rounded-2xl px-4 py-3 hidden md:block ${className}`}>
+    <div className={`absolute glass-card rounded-2xl px-4 py-3 ${className}`}>
       <p className={`font-mono-tag ${colorClass}`}>{label}</p>
       <p className="font-display text-lg font-semibold">{value}</p>
     </div>

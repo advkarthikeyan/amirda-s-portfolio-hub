@@ -20,7 +20,7 @@ export const Hero = () => {
             <br />
             I scale.
             <br />
-            I <em className="text-gradient not-italic font-semibold">ship</em> software.
+            I<em className="text-gradient not-italic font-semibold ml-3 md:ml-5">ship</em> software.
           </h1>
 
           <p className="text-lg text-muted-foreground max-w-xl mb-10 leading-relaxed">

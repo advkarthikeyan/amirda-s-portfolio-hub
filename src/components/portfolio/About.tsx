@@ -9,7 +9,7 @@ export const About = () => {
   return (
     <section id="about" className="py-24 md:py-32">
       <div className="container">
-        <p className="font-mono-tag mb-4 text-yellow-400">// About</p>
+        <p className="font-mono-tag mb-4 text-purple-400">// About</p>
         <h2 className="font-display text-4xl md:text-6xl mb-6 max-w-3xl">
           A developer who turns <span className="text-gradient italic">ideas</span> into production.
         </h2>

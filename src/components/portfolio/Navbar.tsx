@@ -25,11 +25,11 @@ export const Navbar = () => {
       }`}
     >
       <nav className="container flex items-center justify-between gap-8">
-        <a href="#home" className="font-display text-2xl font-semibold mr-auto">
+        <a href="#home" className="font-display text-2xl font-semibold">
           <span style={{ color: "hsl(270 70% 60%)" }}>A</span>mirda Varshini M N
         </a>
 
-        <ul className="hidden md:flex items-center gap-6 lg:gap-8 text-sm text-muted-foreground">
+        <ul className="hidden md:flex items-center gap-6 lg:gap-8 text-sm text-muted-foreground mr-auto">
           {links.map((l) => (
             <li key={l.href}>
               <a href={l.href} className="hover:text-foreground transition-colors">

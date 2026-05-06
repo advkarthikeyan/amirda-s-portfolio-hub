@@ -14,7 +14,7 @@ export const About = () => {
   return (
     <section id="about" className="py-24 md:py-32">
       <div className="container">
-         <p className="font-mono-tag mb-4 text-purple-700 uppercase tracking-wider">// ABOUT</p>
+         <p className="font-mono-tag mb-4 uppercase tracking-wider text-cyan-400">// ABOUT</p>
         <h2 ref={heading.ref} className={`font-display text-4xl md:text-6xl mb-6 max-w-3xl reveal ${heading.visible ? "is-visible" : ""}`}>
           A developer who turns <span className="text-gradient italic">ideas</span> into production.
         </h2>

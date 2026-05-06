@@ -59,10 +59,10 @@ const ContactCard = ({ channel: c, index }: { channel: { icon: any; label: strin
       href={c.href}
       target={c.href.startsWith("http") ? "_blank" : undefined}
       rel="noopener noreferrer"
-      className={`glass-card rounded-2xl p-6 hover:border-primary/50 hover-lift group reveal ${visible ? "is-visible" : ""}`}
+      className={`glass-card rounded-2xl p-6 hover:border-emerald-400/50 hover-lift group reveal ${visible ? "is-visible" : ""}`}
       style={{ transitionDelay: `${index * 100}ms` }}
     >
-      <Icon className="w-6 h-6 text-primary mb-4 group-hover:scale-110 group-hover:rotate-6 transition-transform" />
+      <Icon className="w-6 h-6 text-emerald-400 mb-4 group-hover:scale-110 group-hover:rotate-6 transition-transform" />
       <p className="font-mono-tag text-muted-foreground mb-1">{c.label}</p>
       <p className="font-medium break-all">{c.value}</p>
     </a>

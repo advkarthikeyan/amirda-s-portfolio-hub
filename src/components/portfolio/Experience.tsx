@@ -90,7 +90,7 @@ const ExperienceCard = ({ exp, index }: { exp: typeof experiences[number]; index
               <ul className="space-y-2 mb-6">
                 {exp.bullets.map((b, j) => (
                   <li key={j} className="flex gap-3 text-muted-foreground">
-                    <span className="text-primary mt-2 shrink-0 w-1.5 h-1.5 rounded-full bg-primary" />
+                    <span className="text-emerald-400 mt-2 shrink-0 w-1.5 h-1.5 rounded-full bg-emerald-400" />
                     <span>{b}</span>
                   </li>
                 ))}
@@ -100,7 +100,7 @@ const ExperienceCard = ({ exp, index }: { exp: typeof experiences[number]; index
                 {exp.stack.map((s) => (
                   <span
                     key={s}
-                    className="text-xs px-3 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/20 hover-scale"
+                    className="text-xs px-3 py-1.5 rounded-full bg-emerald-400/10 text-emerald-400 border border-emerald-400/20 hover-scale"
                   >
                     {s}
                   </span>

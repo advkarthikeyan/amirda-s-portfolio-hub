@@ -12,7 +12,7 @@ export const Hero = () => {
           </div>
 
            <p className="font-mono-tag text-muted-foreground mb-6 uppercase tracking-wider">
-             <span className="text-primary">.NET</span> · <span className="text-accent">Angular</span> · <span className="text-cyan-400">Full Stack</span>
+             <span className="text-emerald-400">.NET</span> · <span className="text-accent">Angular</span> · <span className="text-violet-400">Full Stack</span>
           </p>
 
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl leading-[0.95] mb-8">
@@ -88,7 +88,7 @@ export const Hero = () => {
               {[".NET 8", "ANGULAR", "C#", "SQL SERVER", "WEB API", "ENTITY FRAMEWORK", "MONGODB", "AZURE DEVOPS", "JAVASCRIPT", "MVC"].map((s, idx) => (
                 <span key={s} className="flex items-center gap-8 whitespace-nowrap">
                   <span style={idx % 2 === 1 ? { color: "#f24545" } : undefined}>{s}</span>
-                  <span className="text-primary">·</span>
+                  <span className="text-emerald-400">·</span>
                 </span>
               ))}
             </div>
@@ -105,7 +105,7 @@ const SocialIcon = ({ href, label, children }: { href: string; label: string; ch
     target="_blank"
     rel="noopener noreferrer"
     aria-label={label}
-    className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary hover:bg-primary/10 transition-all"
+    className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-emerald-400 hover:bg-emerald-400/10 transition-all"
   >
     {children}
   </a>
@@ -123,9 +123,9 @@ const FloatingTag = ({
   color: "primary" | "accent" | "teal";
 }) => {
   const colorClass = {
-    primary: "text-primary",
+    primary: "text-emerald-400",
     accent: "text-accent",
-      teal: "text-cyan-400",
+      teal: "text-violet-400",
   }[color];
   return (
     <div className={`absolute glass-card rounded-2xl px-4 py-3 ${className}`}>

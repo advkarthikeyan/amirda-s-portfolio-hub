@@ -42,10 +42,9 @@ All colors MUST be HSL.
     --teal: 41 100% 67%;
 
     /* Gradients */
-    --gradient-hero: radial-gradient(ellipse at top left, hsl(125 25% 80% / 0.35), transparent 60%),
-                     radial-gradient(ellipse at bottom right, hsl(41 100% 67% / 0.3), transparent 55%),
-                     radial-gradient(ellipse at center, hsl(211 28% 25% / 0.5), transparent 70%),
-                     linear-gradient(135deg, hsl(211 28% 12%), hsl(211 28% 8%));
+    --gradient-hero: radial-gradient(ellipse at top left, hsl(211 28% 25% / 0.6), transparent 60%),
+                     radial-gradient(ellipse at bottom right, hsl(41 100% 40% / 0.35), transparent 55%),
+                     linear-gradient(135deg, hsl(0 0% 2%), hsl(0 0% 0%));
     --gradient-text: linear-gradient(135deg, hsl(125 25% 80%), hsl(41 100% 67%));
     --gradient-accent: linear-gradient(135deg, hsl(125 25% 80%), hsl(41 100% 67%));
     --gradient-card: linear-gradient(160deg, hsl(0 0% 8% / 0.9), hsl(0 0% 4% / 0.9));

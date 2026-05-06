@@ -39,7 +39,7 @@ const experiences = [
       "Developed finance-oriented applications generating customized invoice reports for VWR International.",
       "Owned DevExpress XtraReports development and project release cycles.",
       "Resolved Web API bugs and addressed client-reported issues end-to-end.",
-      "Contributed to eFACILITY enhancements across Time & Attendance, Project Management and Help Desk modules.",
+      "",
     ],
   },
 ];
@@ -90,7 +90,7 @@ const ExperienceCard = ({ exp, index }: { exp: typeof experiences[number]; index
               <ul className="space-y-2 mb-6">
                 {exp.bullets.map((b, j) => (
                   <li key={j} className="flex gap-3 text-muted-foreground">
-                    <span className="text-emerald-400 mt-2 shrink-0 w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                    <span className="mt-2 shrink-0 w-1.5 h-1.5 rounded-full text-transparent bg-transparent" />
                     <span>{b}</span>
                   </li>
                 ))}

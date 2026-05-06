@@ -27,9 +27,8 @@ export const Skills = () => {
   const heading = useReveal<HTMLHeadingElement>();
 
   return (
-    <section id="skills" className="py-24 md:py-32 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/3 rounded-full blur-3xl animate-morph" />
+    <section id="skills" className="py-24 md:py-32 relative overflow-hidden" style={{ backgroundColor: "hsl(0 0% 100%)" }}>
+      {/* Background decoration removed */}
 
       <div className="container relative">
         <p className="font-mono-tag mb-4 text-primary reveal-blur" style={{ transitionDelay: "0.1s" }}>

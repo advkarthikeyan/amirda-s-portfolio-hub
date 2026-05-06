@@ -8,66 +8,70 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Navy + Cream + Gold palette */
-    --background: 213 100% 5%;
-    --foreground: 44 56% 84%;
+    /* Professional Accounting Palette: Deep Blue + Orange + White + Light Gray */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 20%;
 
-    --card: 213 80% 9%;
-    --card-foreground: 44 56% 84%;
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 20%;
 
-    --popover: 213 80% 9%;
-    --popover-foreground: 44 56% 84%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 20%;
 
-    --primary: 44 56% 84%;
-    --primary-foreground: 213 100% 18%;
+    --primary: 210 70% 38%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 213 100% 18%;
-    --secondary-foreground: 44 56% 84%;
+    --secondary: 39 100% 50%;
+    --secondary-foreground: 0 0% 20%;
 
-    --muted: 213 40% 14%;
-    --muted-foreground: 44 20% 65%;
+    --muted: 0 0% 92%;
+    --muted-foreground: 0 0% 50%;
 
-    --accent: 43 74% 63%;
-    --accent-foreground: 213 100% 5%;
+    --accent: 39 100% 50%;
+    --accent-foreground: 0 0% 20%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 44 56% 84%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 213 60% 18%;
-    --input: 213 60% 16%;
-    --ring: 44 56% 84%;
+    --border: 0 0% 90%;
+    --input: 0 0% 95%;
+    --ring: 210 70% 38%;
 
     --radius: 1rem;
 
-    --violet: 44 56% 84%;
-    --coral: 213 100% 18%;
-    --teal: 43 74% 63%;
+    --violet: 210 70% 38%;
+    --coral: 39 100% 50%;
+    --teal: 210 70% 38%;
+
+    /* Section Background Colors */
+    --bg-hero: 210 70% 38%;
+    --bg-about: 0 0% 100%;
+    --bg-experience: 0 0% 97%;
+    --bg-skills: 0 0% 100%;
+    --bg-contact: 0 0% 97%;
 
     /* Gradients */
-    --gradient-hero: radial-gradient(at 20% 20%, hsl(44 56% 84% / 0.15) 0px, transparent 50%),
-                     radial-gradient(at 80% 30%, hsl(213 100% 18% / 0.3) 0px, transparent 50%),
-                     radial-gradient(at 60% 80%, hsl(43 74% 63% / 0.2) 0px, transparent 50%),
-                     linear-gradient(135deg, hsl(213 100% 5%), hsl(213 100% 3%));
-    --gradient-text: linear-gradient(135deg, hsl(44 56% 84%), hsl(43 74% 63%));
-    --gradient-accent: linear-gradient(135deg, hsl(44 56% 84%), hsl(43 74% 63%));
-    --gradient-card: linear-gradient(160deg, hsl(213 80% 11% / 0.9), hsl(213 80% 7% / 0.9));
+    --gradient-hero: linear-gradient(135deg, hsl(210 70% 38%), hsl(210 65% 30%));
+    --gradient-text: linear-gradient(135deg, hsl(210 70% 38%), hsl(39 100% 50%));
+    --gradient-accent: linear-gradient(135deg, hsl(39 100% 50%), hsl(39 90% 40%));
+    --gradient-card: linear-gradient(160deg, hsl(0 0% 98% / 0.95), hsl(0 0% 95% / 0.95));
 
     /* Shadows / glow */
-    --shadow-glow: 0 0 60px hsl(44 56% 84% / 0.4);
-    --shadow-violet: 0 0 40px hsl(44 56% 84% / 0.4);
-    --shadow-coral: 0 0 40px hsl(213 100% 18% / 0.4);
-    --shadow-card: 0 20px 60px -20px hsl(213 100% 3% / 0.9);
+    --shadow-glow: 0 0 60px hsl(210 70% 38% / 0.2);
+    --shadow-violet: 0 0 40px hsl(210 70% 38% / 0.15);
+    --shadow-coral: 0 0 40px hsl(39 100% 50% / 0.2);
+    --shadow-card: 0 20px 60px -20px hsl(0 0% 0% / 0.1);
 
     --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
 
-    --sidebar-background: 213 100% 5%;
-    --sidebar-foreground: 44 20% 65%;
-    --sidebar-primary: 44 56% 84%;
-    --sidebar-primary-foreground: 213 100% 18%;
-    --sidebar-accent: 213 40% 14%;
-    --sidebar-accent-foreground: 44 56% 84%;
-    --sidebar-border: 213 60% 18%;
-    --sidebar-ring: 44 56% 84%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 40%;
+    --sidebar-primary: 210 70% 38%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 92%;
+    --sidebar-accent-foreground: 0 0% 20%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 210 70% 38%;
   }
 }
 
@@ -79,8 +83,6 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', system-ui, sans-serif;
-    background-image: var(--gradient-hero);
-    background-attachment: fixed;
   }
 
   h1, h2, h3, h4 {

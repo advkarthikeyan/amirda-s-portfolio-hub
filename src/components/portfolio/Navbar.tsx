@@ -29,7 +29,7 @@ export const Navbar = () => {
           <span style={{ color: "hsl(270 70% 60%)" }}>A</span>mirda Varshini M N
         </a>
 
-        <ul className="hidden md:flex items-center gap-6 lg:gap-8 text-sm text-muted-foreground mr-auto">
+        <ul className="hidden md:flex items-center gap-6 lg:gap-8 text-sm text-muted-foreground absolute left-1/2 -translate-x-1/2">
           {links.map((l) => (
             <li key={l.href}>
               <a href={l.href} className="story-link hover:text-foreground transition-colors">

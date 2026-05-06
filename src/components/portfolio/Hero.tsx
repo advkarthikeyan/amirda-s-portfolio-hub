@@ -94,7 +94,7 @@ export const Hero = () => {
             <div className="absolute -inset-3 rounded-full border border-primary/20 animate-spin-slow group-hover/profile:border-primary/50 transition-colors duration-500" />
             <div className="absolute -inset-6 rounded-full border border-dashed border-secondary/10 animate-spin-slow group-hover/profile:border-secondary/30 transition-colors duration-500" style={{ animationDirection: "reverse" }} />
 
-            <div className="relative w-[280px] h-[320px] md:w-[360px] md:h-[420px] hex-clip bg-gradient-to-br from-primary/20 to-secondary/10 p-1 animate-float group-hover/profile:scale-[1.02] group-hover/profile:shadow-[0_0_40px_hsl(265_100%_59%/0.3)] transition-all duration-500">
+            <div className="relative w-[280px] h-[320px] md:w-[360px] md:h-[420px] hex-clip bg-gradient-to-br from-primary/20 to-secondary/10 p-1 animate-float group-hover/profile:scale-[1.02] group-hover/profile:shadow-[0_0_40px_hsl(43_74%_63%/0.3)] transition-all duration-500">
               <img
                 src={profile}
                 alt="Amirda Varshini MN — Full Stack Developer"
@@ -118,7 +118,7 @@ export const Hero = () => {
             <div key={i} className="flex items-center gap-8 pr-8">
               {[".NET 8", "ANGULAR", "C#", "SQL SERVER", "WEB API", "ENTITY FRAMEWORK", "MONGODB", "AZURE DEVOPS", "JAVASCRIPT", "MVC"].map((s, idx) => (
                 <span key={s} className="flex items-center gap-8 whitespace-nowrap animate-shimmer rounded px-2 py-1">
-                  <span style={idx % 2 === 1 ? { color: "#ffb71c" } : undefined}>{s}</span>
+                  <span style={idx % 2 === 1 ? { color: "#e6be5a" } : undefined}>{s}</span>
                   <span className="text-primary">·</span>
                 </span>
               ))}

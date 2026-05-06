@@ -36,23 +36,23 @@ export const Navbar = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "py-3 backdrop-blur-xl bg-foreground/90 border-b border-white/20 shadow-lg shadow-black/10"
+          ? "py-3 backdrop-blur-xl bg-background/70 border-b border-border shadow-lg shadow-background/20"
           : "py-6"
       }`}
     >
       <nav className="container flex items-center justify-between gap-8">
         <a href="#home" className="font-display text-2xl font-semibold group">
-          <span style={{ color: "#FF9500" }} className="group-hover:text-secondary transition-colors duration-300">A</span>
-          <span className="text-white hover:text-white/90 transition-colors duration-300">mirda Varshini M N</span>
+          <span style={{ color: "#ffb71c" }} className="group-hover:text-accent transition-colors duration-300">A</span>
+          <span className="hover:text-emerald-400 transition-colors duration-300">mirda Varshini M N</span>
         </a>
 
-        <ul className="hidden lg:flex items-center gap-6 lg:gap-8 text-sm text-white/70 absolute left-1/2 -translate-x-1/2">
+        <ul className="hidden lg:flex items-center gap-6 lg:gap-8 text-sm text-muted-foreground absolute left-1/2 -translate-x-1/2">
           {links.map((l) => (
             <li key={l.href} className="relative">
               <a
                 href={l.href}
                 className={`story-link transition-colors duration-300 ${
-                  activeSection === l.href.slice(1) ? "text-white" : "hover:text-white/90"
+                  activeSection === l.href.slice(1) ? "text-foreground" : "hover:text-foreground"
                 }`}
               >
                 {l.label}
@@ -66,19 +66,19 @@ export const Navbar = () => {
 
         <a
           href="#contact"
-          className="hidden lg:inline-flex px-5 py-2.5 rounded-full bg-gradient-to-r from-primary to-secondary text-primary-foreground text-sm font-medium hover:shadow-[var(--shadow-glow)] hover:scale-105 transition-all duration-300"
+          className="hidden lg:inline-flex px-5 py-2.5 rounded-full bg-gradient-to-r from-primary to-accent text-primary-foreground text-sm font-medium hover:shadow-[var(--shadow-glow)] hover:scale-105 transition-all duration-300"
         >
           Hire Me
         </a>
 
         <button
           aria-label="Toggle menu"
-          className="lg:hidden p-2 rounded-md border border-white/30 hover:border-white/60 transition-colors"
+          className="lg:hidden p-2 rounded-md border border-border hover:border-primary/40 transition-colors"
           onClick={() => setOpen(!open)}
         >
-          <div className={`w-5 h-0.5 bg-white mb-1.5 transition-transform duration-300 ${open ? "rotate-45 translate-y-2" : ""}`} />
-          <div className={`w-5 h-0.5 bg-white mb-1.5 transition-opacity duration-300 ${open ? "opacity-0" : ""}`} />
-          <div className={`w-5 h-0.5 bg-white transition-transform duration-300 ${open ? "-rotate-45 -translate-y-2" : ""}`} />
+          <div className={`w-5 h-0.5 bg-foreground mb-1.5 transition-transform duration-300 ${open ? "rotate-45 translate-y-2" : ""}`} />
+          <div className={`w-5 h-0.5 bg-foreground mb-1.5 transition-opacity duration-300 ${open ? "opacity-0" : ""}`} />
+          <div className={`w-5 h-0.5 bg-foreground transition-transform duration-300 ${open ? "-rotate-45 -translate-y-2" : ""}`} />
         </button>
       </nav>
 
@@ -88,7 +88,7 @@ export const Navbar = () => {
           open ? "max-h-96 opacity-100 mt-4" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="mx-4 rounded-2xl glass-card p-6 flex flex-col gap-4 bg-white/95 backdrop-blur-sm">
+        <div className="mx-4 rounded-2xl glass-card p-6 flex flex-col gap-4">
           {links.map((l, i) => (
             <a
               key={l.href}
@@ -105,7 +105,7 @@ export const Navbar = () => {
           <a
             href="#contact"
             onClick={closeMenu}
-            className="px-5 py-2.5 rounded-full bg-gradient-to-r from-primary to-secondary text-primary-foreground text-sm font-medium text-center hover:shadow-[var(--shadow-glow)] transition-all duration-300"
+            className="px-5 py-2.5 rounded-full bg-gradient-to-r from-primary to-accent text-primary-foreground text-sm font-medium text-center hover:shadow-[var(--shadow-glow)] transition-all duration-300"
           >
             Hire Me
           </a>

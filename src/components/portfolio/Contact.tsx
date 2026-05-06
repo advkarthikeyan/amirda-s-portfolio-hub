@@ -32,11 +32,13 @@ export const Contact = () => {
   const heading = useReveal<HTMLHeadingElement>();
 
   return (
-    <section id="contact" className="py-24 md:py-32 relative overflow-hidden" style={{ backgroundColor: "hsl(0 0% 97%)" }}>
-      {/* Background decoration removed */}
+    <section id="contact" className="py-24 md:py-32 bg-card/20 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-emerald-400/5 rounded-full blur-3xl animate-morph" />
+      <div className="absolute top-0 right-1/4 w-72 h-72 bg-accent/5 rounded-full blur-3xl animate-morph" style={{ animationDelay: "-5s" }} />
 
       <div className="container relative">
-        <p className="font-mono-tag mb-4 text-primary reveal-blur" style={{ transitionDelay: "0.1s" }}>
+        <p className="font-mono-tag mb-4 text-emerald-400 reveal-blur" style={{ transitionDelay: "0.1s" }}>
           // Contact
         </p>
         <h2
@@ -69,12 +71,12 @@ const ContactCard = ({ channel: c, index }: { channel: { icon: any; label: strin
       href={c.href}
       target={c.href.startsWith("http") ? "_blank" : undefined}
       rel="noopener noreferrer"
-      className={`glass-card rounded-2xl p-6 hover:border-primary/50 hover-lift hover-glow-border group relative overflow-hidden reveal-scale ${visible ? "is-visible" : ""}`}
+      className={`glass-card rounded-2xl p-6 hover:border-emerald-400/50 hover-lift hover-glow-border group relative overflow-hidden reveal-scale ${visible ? "is-visible" : ""}`}
       style={{ transitionDelay: `${index * 120 + 400}ms` }}
     >
       <div className="relative z-10">
-        <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
-          <Icon className="w-6 h-6 text-primary group-hover:rotate-12 transition-transform duration-300" />
+        <div className="w-12 h-12 rounded-xl bg-emerald-400/10 flex items-center justify-center mb-4 group-hover:bg-emerald-400/20 group-hover:scale-110 transition-all duration-300">
+          <Icon className="w-6 h-6 text-emerald-400 group-hover:rotate-12 transition-transform duration-300" />
         </div>
         <p className="font-mono-tag text-muted-foreground mb-1">{c.label}</p>
         <p className="font-medium break-all flex items-center gap-1">

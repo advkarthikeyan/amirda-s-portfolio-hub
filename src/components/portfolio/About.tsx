@@ -33,11 +33,13 @@ export const About = () => {
   const grid = useReveal<HTMLDivElement>();
 
   return (
-    <section id="about" className="py-24 md:py-32 relative overflow-hidden" style={{ backgroundColor: "hsl(0 0% 100%)" }}>
-      {/* Background decoration removed */}
+    <section id="about" className="py-24 md:py-32 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute top-0 right-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-morph" />
+      <div className="absolute bottom-0 left-0 w-56 h-56 bg-accent/5 rounded-full blur-3xl animate-morph" style={{ animationDelay: "-3s" }} />
 
       <div className="container relative">
-        <p className="font-mono-tag mb-4 uppercase tracking-wider text-primary reveal-blur" style={{ transitionDelay: "0.1s" }}>
+        <p className="font-mono-tag mb-4 uppercase tracking-wider text-emerald-400 reveal-blur" style={{ transitionDelay: "0.1s" }}>
           // ABOUT
         </p>
         <h2
@@ -59,9 +61,9 @@ export const About = () => {
             </p>
             <p className="text-justify">
               I've worked across the complete software development lifecycle — from idea to
-              production deployment — at <span className="text-foreground font-medium hover:text-primary transition-colors cursor-default">Cognizant</span>,
-              <span className="text-foreground font-medium hover:text-primary transition-colors cursor-default"> Aspire Systems</span> and
-              <span className="text-foreground font-medium hover:text-primary transition-colors cursor-default"> Sierra ODC</span>, building everything like utility
+              production deployment — at <span className="text-foreground font-medium hover:text-emerald-400 transition-colors cursor-default">Cognizant</span>,
+              <span className="text-foreground font-medium hover:text-emerald-400 transition-colors cursor-default"> Aspire Systems</span> and
+              <span className="text-foreground font-medium hover:text-emerald-400 transition-colors cursor-default"> Sierra ODC</span>, building everything like utility
               infrastructure systems and education platforms.
             </p>
             <p className="text-justify">
@@ -81,7 +83,7 @@ export const About = () => {
                 className={`glass-card rounded-2xl p-6 hover-lift hover-glow-border hover:border-primary/40 group relative overflow-hidden reveal-scale ${grid.visible ? "is-visible" : ""}`}
                 style={{ transitionDelay: `${0.4 + i * 0.15}s` }}
               >
-                <p className="font-display text-4xl md:text-5xl text-white font-semibold mb-2">
+                <p className="font-display text-4xl md:text-5xl text-gradient font-semibold mb-2">
                   <AnimatedCounter value={s.value} />
                   {s.showPlus && <span>+</span>}
                 </p>

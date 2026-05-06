@@ -19,7 +19,7 @@ export const Contact = () => {
       icon: Linkedin,
       label: "LinkedIn",
       value: "/in/amirda-varshini",
-      href: "https://www.linkedin.com/in/amirda-varshini1114vakkv/",
+      href: "https://www.linkedin.com/in/amirda-varshini-mn/",
     },
     {
       icon: Briefcase,

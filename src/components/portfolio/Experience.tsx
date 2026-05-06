@@ -48,7 +48,7 @@ export const Experience = () => {
   return (
     <section id="experience" className="py-24 md:py-32 bg-card/20">
       <div className="container">
-        <p className="font-mono-tag mb-4 text-purple-400">// Experience</p>
+        <p className="font-mono-tag mb-4 text-lime-500">// Experience</p>
         <h2 className="font-display text-4xl md:text-6xl mb-16 max-w-3xl">
           Seven years.<br />
           <span className="text-gradient italic">Three companies.</span> One craft.

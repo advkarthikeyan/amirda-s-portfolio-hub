@@ -32,7 +32,7 @@ export const Contact = () => {
   return (
     <section id="contact" className="py-24 md:py-32 bg-card/20">
       <div className="container">
-        <p className="font-mono-tag mb-4 text-purple-400">// Contact</p>
+        <p className="font-mono-tag mb-4 text-destructive">// Contact</p>
         <h2 className="font-display text-4xl md:text-7xl mb-8 max-w-3xl">
           Let's build <span className="text-gradient italic">something</span> together.
         </h2>

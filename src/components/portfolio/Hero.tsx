@@ -12,7 +12,7 @@ export const Hero = () => {
           </div>
 
            <p className="font-mono-tag text-muted-foreground mb-6 uppercase tracking-wider">
-             <span className="text-primary">.NET</span> · <span className="text-accent">Angular</span> · <span className="text-purple-700">Full Stack</span>
+             <span className="text-primary">.NET</span> · <span className="text-accent">Angular</span> · <span className="text-cyan-400">Full Stack</span>
           </p>
 
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl leading-[0.95] mb-8">
@@ -33,7 +33,7 @@ export const Hero = () => {
           <div className="flex flex-wrap items-center gap-4 mb-10">
             <a
               href="#experience"
-              className="px-7 py-3.5 rounded-full bg-gradient-to-r from-primary to-[hsl(290_85%_60%)] text-primary-foreground font-medium hover:shadow-[var(--shadow-glow)] hover-scale transition-all"
+              className="px-7 py-3.5 rounded-full bg-gradient-to-r from-primary to-[hsl(290_85%_60%)] text-primary-foreground font-medium hover:shadow-[var(--shadow-glow)] hover-scale transition-all bg-inherit"
             >
               View My Work →
             </a>
@@ -125,7 +125,7 @@ const FloatingTag = ({
   const colorClass = {
     primary: "text-primary",
     accent: "text-accent",
-     teal: "text-purple-700",
+      teal: "text-cyan-400",
   }[color];
   return (
     <div className={`absolute glass-card rounded-2xl px-4 py-3 ${className}`}>

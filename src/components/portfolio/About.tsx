@@ -23,10 +23,10 @@ const AnimatedCounter = ({ value, duration = 2000 }: { value: number; duration?:
 
 export const About = () => {
   const stats = [
-    { value: 7, suffix: "+", label: "Years Experience" },
-    { value: 3, suffix: "", label: "Companies" },
-    { value: 5, suffix: "+", label: "Major Projects" },
-    { value: 10, suffix: "+", label: "Technologies" },
+    { value: 7, suffix: "+", label: "Years Experience", showPlus: true },
+    { value: 3, suffix: "", label: "Companies", showPlus: false },
+    { value: 5, suffix: "+", label: "Major Projects", showPlus: true },
+    { value: 10, suffix: "+", label: "Technologies", showPlus: true },
   ];
   const heading = useReveal<HTMLHeadingElement>();
   const text = useReveal<HTMLDivElement>();
@@ -85,7 +85,7 @@ export const About = () => {
               >
                 <p className="font-display text-4xl md:text-5xl text-gradient font-semibold mb-2">
                   <AnimatedCounter value={s.value} />
-                  <span className="animate-blink">{s.suffix}</span>
+                  {s.showPlus && <span>+</span>}
                 </p>
                 <p className="font-mono-tag text-muted-foreground uppercase tracking-wider text-xs">{s.label}</p>
                 <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-shimmer pointer-events-none" />

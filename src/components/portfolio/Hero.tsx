@@ -27,11 +27,11 @@ export const Hero = () => {
             className="font-mono-tag text-muted-foreground mb-6 uppercase tracking-wider animate-slide-up"
             style={{ animationDelay: "0.2s" }}
           >
-            <span className="text-emerald-400">.NET</span> · <span className="text-accent">Angular</span> · <span className="text-teal">Full Stack</span>
+            <span className="text-emerald-400">.NET</span> · <span className="text-accent">Angular</span> · <span className="text-purple-400">Full Stack</span>
           </p>
 
           {/* Main heading - clip reveal */}
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl leading-[0.95] mb-8 animate-clip-reveal" style={{ animationDelay: "0.3s" }}>
+          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl leading-[1.05] mb-8 animate-clip-reveal" style={{ animationDelay: "0.3s" }}>
             I build.
             <br />
             I scale.
@@ -106,7 +106,7 @@ export const Hero = () => {
 
             <FloatingTag className="-top-4 -left-6 hover-scale animate-bounce-subtle" label="Experience" value="7+ Years" color="primary" delay={0.8} />
             <FloatingTag className="top-1/2 -right-8 hover-scale animate-bounce-subtle" label="Stack" value=".NET 8" color="accent" delay={1.0} />
-            <FloatingTag className="-bottom-4 left-4 hover-scale animate-bounce-subtle" label="Frontend" value="Angular" color="teal" delay={1.2} />
+            <FloatingTag className="-bottom-4 left-4 hover-scale animate-bounce-subtle" label="Frontend" value="Angular" color="purple" delay={1.2} />
           </div>
         </div>
       </div>
@@ -118,7 +118,7 @@ export const Hero = () => {
             <div key={i} className="flex items-center gap-8 pr-8">
               {[".NET 8", "ANGULAR", "C#", "SQL SERVER", "WEB API", "ENTITY FRAMEWORK", "MONGODB", "AZURE DEVOPS", "JAVASCRIPT", "MVC"].map((s, idx) => (
                 <span key={s} className="flex items-center gap-8 whitespace-nowrap animate-shimmer rounded px-2 py-1">
-                  <span style={idx % 2 === 1 ? { color: "#f24545" } : undefined}>{s}</span>
+                  <span style={idx % 2 === 1 ? { color: "#ffb71c" } : undefined}>{s}</span>
                   <span className="text-emerald-400">·</span>
                 </span>
               ))}
@@ -161,13 +161,14 @@ const FloatingTag = ({
   className: string;
   label: string;
   value: string;
-  color: "primary" | "accent" | "teal";
+  color: "primary" | "accent" | "teal" | "purple";
   delay?: number;
 }) => {
   const colorClass = {
     primary: "text-emerald-400",
     accent: "text-accent",
     teal: "text-teal",
+    purple: "text-purple-400",
   }[color];
   return (
     <div className={`absolute glass-card rounded-2xl px-4 py-3 ${className} animate-scale-in`} style={{ animationDelay: `${delay}s` }}>

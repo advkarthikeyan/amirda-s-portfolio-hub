@@ -56,19 +56,37 @@ const experiences = [
 ];
 
 export const Experience = () => {
+  const heading = useReveal<HTMLHeadingElement>();
+
   return (
-    <section id="experience" className="py-24 md:py-32 bg-card/20">
-      <div className="container">
-        <p className="font-mono-tag mb-4 text-destructive">// Experience</p>
-        <h2 className="font-display text-4xl md:text-6xl mb-16 max-w-3xl">
+    <section id="experience" className="py-24 md:py-32 bg-card/20 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute top-1/3 -right-20 w-80 h-80 bg-accent/5 rounded-full blur-3xl animate-morph" style={{ animationDelay: "-2s" }} />
+
+      <div className="container relative">
+        <p className="font-mono-tag mb-4 text-emerald-400 reveal-blur" style={{ transitionDelay: "0.1s" }}>
+          // Experience
+        </p>
+        <h2
+          ref={heading.ref}
+          className={`font-display text-4xl md:text-6xl mb-16 max-w-3xl reveal ${heading.visible ? "is-visible" : ""}`}
+          style={{ transitionDelay: "0.2s" }}
+        >
           Seven years.<br />
-          <span className="text-gradient italic">Three companies.</span> One craft.
+          <span className="text-gradient italic animate-gradient">Three companies.</span> One craft.
         </h2>
 
-        <div className="space-y-6">
-          {experiences.map((exp, i) => (
-            <ExperienceCard key={i} exp={exp} index={i} />
-          ))}
+        {/* Timeline */}
+        <div className="relative">
+          {/* Timeline line */}
+          <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px bg-border" />
+          <div className="absolute left-6 md:left-8 top-0 w-px bg-gradient-to-b from-primary via-accent to-primary animate-fill-bar" style={{ height: "100%", animationDuration: "2s" }} />
+
+          <div className="space-y-6">
+            {experiences.map((exp, i) => (
+              <ExperienceCard key={i} exp={exp} index={i} />
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -77,46 +95,62 @@ export const Experience = () => {
 
 const ExperienceCard = ({ exp, index }: { exp: typeof experiences[number]; index: number }) => {
   const { ref, visible } = useReveal<HTMLElement>();
+  const isEven = index % 2 === 0;
+
   return (
     <article
       ref={ref}
-      className={`glass-card rounded-3xl p-6 md:p-10 hover:border-primary/40 hover-lift group reveal ${visible ? "is-visible" : ""}`}
-      style={{ transitionDelay: `${index * 120}ms` }}
+      className={`relative pl-16 md:pl-20 group ${isEven ? "reveal-left" : "reveal-right"} ${visible ? "is-visible" : ""}`}
+      style={{ transitionDelay: `${index * 150}ms` }}
     >
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-6">
-                <div>
-                  <h3 className="font-display text-2xl md:text-3xl mb-1">{exp.role}</h3>
-                  <p className="text-foreground/90">
-                    {exp.company} <span className="text-muted-foreground">· {exp.location}</span>
-                  </p>
-                </div>
-                <span className="font-mono-tag text-accent shrink-0">{exp.period}</span>
-              </div>
+      {/* Timeline dot */}
+      <div className="absolute left-4 md:left-6 top-8 z-10">
+        <div className="w-4 h-4 rounded-full border-2 border-primary bg-background group-hover:bg-primary group-hover:scale-125 transition-all duration-300" />
+        <div className="absolute inset-0 w-4 h-4 rounded-full bg-primary/30 animate-pulse-ring" />
+      </div>
 
-              <p className="text-sm text-muted-foreground mb-4">
-                <span className="font-mono-tag text-teal mr-2">PROJECT</span>
-                {exp.project}
-              </p>
+      <div className="glass-card rounded-3xl p-6 md:p-10 hover:border-primary/40 hover-lift hover-glow-border group relative overflow-hidden">
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-6">
+          <div>
+            <h3 className="font-display text-2xl md:text-3xl mb-1 group-hover:text-gradient transition-all duration-300">
+              {exp.role}
+            </h3>
+            <p className="text-foreground/90">
+              {exp.company} <span className="text-muted-foreground">· {exp.location}</span>
+            </p>
+          </div>
+          <span className="font-mono-tag text-accent shrink-0">{exp.period}</span>
+        </div>
 
-              <ul className="space-y-2 mb-6">
-                {exp.bullets.map((b, j) => (
-                  <li key={j} className="flex gap-3 text-muted-foreground">
-                    <span className="mt-2 shrink-0 w-1.5 h-1.5 rounded-full text-emerald-400 bg-emerald-400" />
-                    <span>{b}</span>
-                  </li>
-                ))}
-              </ul>
+        <p className="text-sm text-muted-foreground mb-4">
+          <span className="font-mono-tag text-teal mr-2">PROJECT</span>
+          {exp.project}
+        </p>
 
-              <div className="flex flex-wrap gap-2">
-                {exp.stack.map((s) => (
-                  <span
-                    key={s}
-                    className="text-xs px-3 py-1.5 rounded-full bg-emerald-400/10 text-emerald-400 border border-emerald-400/20 hover-scale"
-                  >
-                    {s}
-                  </span>
-                ))}
-              </div>
+        <ul className="space-y-2 mb-6">
+          {exp.bullets.map((b, j) => (
+            <li key={j} className="flex gap-3 text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
+              <span className="mt-2 shrink-0 w-1.5 h-1.5 rounded-full bg-emerald-400 group-hover:scale-150 transition-transform duration-300" />
+              <span>{b}</span>
+            </li>
+          ))}
+        </ul>
+
+        <div className="flex flex-wrap gap-2">
+          {exp.stack.map((s, si) => (
+            <span
+              key={s}
+              className="text-xs px-3 py-1.5 rounded-full bg-emerald-400/10 text-emerald-400 border border-emerald-400/20 hover-scale hover:bg-emerald-400/20 hover:border-emerald-400/40 transition-all duration-300"
+              style={{ transitionDelay: `${si * 50}ms` }}
+            >
+              {s}
+            </span>
+          ))}
+        </div>
+
+        {/* Shimmer sweep on hover */}
+        <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-shimmer pointer-events-none" />
+      </div>
     </article>
   );
 };

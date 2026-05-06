@@ -39,7 +39,18 @@ const experiences = [
       "Developed finance-oriented applications generating customized invoice reports for VWR International.",
       "Owned DevExpress XtraReports development and project release cycles.",
       "Resolved Web API bugs and addressed client-reported issues end-to-end.",
-      "",
+    ],
+  },
+  {
+    role: "Software Developer",
+    company: "Sierra ODC Pvt. Ltd.",
+    location: "Coimbatore",
+    period: "Feb 2019 — Sep 2021",
+    project: "Enterprise Facility Management System (eFACILITY)",
+    stack: ["C#", "ASP.NET MVC", "Oracle", "jQuery", "Bootstrap", "DevExpress"],
+    bullets: [
+      "Assisted with resolving reported bugs in Time and Attendance, Project Management, and Help Desk modules.",
+      "Engaged in development activities related to product enhancement for workforce operations.",
     ],
   },
 ];

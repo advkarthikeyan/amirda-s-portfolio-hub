@@ -83,7 +83,7 @@ export const About = () => {
                 className={`glass-card rounded-2xl p-6 hover-lift hover-glow-border hover:border-primary/40 group relative overflow-hidden reveal-scale ${grid.visible ? "is-visible" : ""}`}
                 style={{ transitionDelay: `${0.4 + i * 0.15}s` }}
               >
-                <p className="font-display text-4xl md:text-5xl text-gradient font-semibold mb-2">
+                <p className="font-display text-4xl md:text-5xl text-white font-semibold mb-2">
                   <AnimatedCounter value={s.value} />
                   {s.showPlus && <span>+</span>}
                 </p>

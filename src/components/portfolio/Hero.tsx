@@ -16,8 +16,8 @@ export const Hero = () => {
             style={{ animationDelay: "0.1s" }}
           >
             <span className="relative flex h-2 w-2">
-              <span className="animate-pulse-ring absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
+              <span className="animate-pulse-ring absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
             </span>
             <span className="text-xs text-muted-foreground">Open to Full Stack opportunities</span>
           </div>
@@ -31,7 +31,7 @@ export const Hero = () => {
           </p>
 
           {/* Main heading - clip reveal */}
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl leading-[1.05] mb-8 animate-clip-reveal" style={{ animationDelay: "0.3s" }}>
+          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl leading-[1.05] mb-12 animate-clip-reveal" style={{ animationDelay: "0.3s" }}>
             I build.
             <br />
             I scale.
@@ -86,15 +86,15 @@ export const Hero = () => {
 
         {/* Profile image - slide in from right */}
         <div className="relative flex justify-center lg:justify-end animate-slide-in-right" style={{ animationDelay: "0.4s" }}>
-          <div className="relative">
+          <div className="relative group/profile">
             {/* Animated glow behind image */}
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/40 to-secondary/30 blur-3xl rounded-full animate-pulse" style={{ animationDuration: "4s" }} />
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/40 to-secondary/30 blur-3xl rounded-full animate-pulse group-hover/profile:opacity-100 opacity-60 transition-opacity duration-500" style={{ animationDuration: "4s" }} />
 
             {/* Spinning border ring */}
-            <div className="absolute -inset-3 rounded-full border border-primary/20 animate-spin-slow" />
-            <div className="absolute -inset-6 rounded-full border border-dashed border-secondary/10 animate-spin-slow" style={{ animationDirection: "reverse" }} />
+            <div className="absolute -inset-3 rounded-full border border-primary/20 animate-spin-slow group-hover/profile:border-primary/50 transition-colors duration-500" />
+            <div className="absolute -inset-6 rounded-full border border-dashed border-secondary/10 animate-spin-slow group-hover/profile:border-secondary/30 transition-colors duration-500" style={{ animationDirection: "reverse" }} />
 
-            <div className="relative w-[280px] h-[320px] md:w-[360px] md:h-[420px] hex-clip bg-gradient-to-br from-primary/20 to-secondary/10 p-1 animate-float">
+            <div className="relative w-[280px] h-[320px] md:w-[360px] md:h-[420px] hex-clip bg-gradient-to-br from-primary/20 to-secondary/10 p-1 animate-float group-hover/profile:scale-[1.02] group-hover/profile:shadow-[0_0_40px_hsl(265_100%_59%/0.3)] transition-all duration-500">
               <img
                 src={profile}
                 alt="Amirda Varshini MN — Full Stack Developer"

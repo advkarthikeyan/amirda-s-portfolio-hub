@@ -39,7 +39,7 @@ export const About = () => {
       <div className="absolute bottom-0 left-0 w-56 h-56 bg-accent/5 rounded-full blur-3xl animate-morph" style={{ animationDelay: "-3s" }} />
 
       <div className="container relative">
-        <p className="font-mono-tag mb-4 uppercase tracking-wider text-emerald-400 reveal-blur" style={{ transitionDelay: "0.1s" }}>
+        <p className="font-mono-tag mb-4 uppercase tracking-wider text-primary reveal-blur" style={{ transitionDelay: "0.1s" }}>
           // ABOUT
         </p>
         <h2
@@ -61,9 +61,9 @@ export const About = () => {
             </p>
             <p className="text-justify">
               I've worked across the complete software development lifecycle — from idea to
-              production deployment — at <span className="text-foreground font-medium hover:text-emerald-400 transition-colors cursor-default">Cognizant</span>,
-              <span className="text-foreground font-medium hover:text-emerald-400 transition-colors cursor-default"> Aspire Systems</span> and
-              <span className="text-foreground font-medium hover:text-emerald-400 transition-colors cursor-default"> Sierra ODC</span>, building everything like utility
+              production deployment — at <span className="text-foreground font-medium hover:text-primary transition-colors cursor-default">Cognizant</span>,
+              <span className="text-foreground font-medium hover:text-primary transition-colors cursor-default"> Aspire Systems</span> and
+              <span className="text-foreground font-medium hover:text-primary transition-colors cursor-default"> Sierra ODC</span>, building everything like utility
               infrastructure systems and education platforms.
             </p>
             <p className="text-justify">

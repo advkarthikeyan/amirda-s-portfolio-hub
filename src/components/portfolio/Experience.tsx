@@ -54,7 +54,7 @@ export const Experience = () => {
       <div className="absolute top-1/3 -right-20 w-80 h-80 bg-accent/5 rounded-full blur-3xl animate-morph" style={{ animationDelay: "-2s" }} />
 
       <div className="container relative">
-        <p className="font-mono-tag mb-4 text-emerald-400 reveal-blur" style={{ transitionDelay: "0.1s" }}>
+        <p className="font-mono-tag mb-4 text-primary reveal-blur" style={{ transitionDelay: "0.1s" }}>
           // Experience
         </p>
         <h2
@@ -70,7 +70,7 @@ export const Experience = () => {
         <div className="relative">
           {/* Timeline line */}
           <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px bg-border" />
-          <div className="absolute left-6 md:left-8 top-0 w-px bg-gradient-to-b from-primary via-accent to-primary animate-fill-bar" style={{ height: "100%", animationDuration: "2s" }} />
+          <div className="absolute left-6 md:left-8 top-0 w-px bg-gradient-to-b from-primary via-secondary to-accent animate-fill-bar" style={{ height: "100%", animationDuration: "2s" }} />
 
           <div className="space-y-6">
             {experiences.map((exp, i) => (
@@ -109,18 +109,18 @@ const ExperienceCard = ({ exp, index }: { exp: typeof experiences[number]; index
               {exp.company} <span className="text-muted-foreground">· {exp.location}</span>
             </p>
           </div>
-          <span className="font-mono-tag text-accent shrink-0">{exp.period}</span>
+          <span className="font-mono-tag text-secondary shrink-0">{exp.period}</span>
         </div>
 
         <p className="text-sm text-muted-foreground mb-4">
-          <span className="font-mono-tag text-teal mr-2">PROJECT</span>
+          <span className="font-mono-tag text-accent mr-2">PROJECT</span>
           {exp.project}
         </p>
 
         <ul className="space-y-2 mb-6">
           {exp.bullets.map((b, j) => (
             <li key={j} className="flex gap-3 text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-              <span className="mt-2 shrink-0 w-1.5 h-1.5 rounded-full bg-emerald-400 group-hover:scale-150 transition-transform duration-300" />
+              <span className="mt-2 shrink-0 w-1.5 h-1.5 rounded-full bg-primary group-hover:scale-150 transition-transform duration-300" />
               <span>{b}</span>
             </li>
           ))}
@@ -130,7 +130,7 @@ const ExperienceCard = ({ exp, index }: { exp: typeof experiences[number]; index
           {exp.stack.map((s, si) => (
             <span
               key={s}
-              className="text-xs px-3 py-1.5 rounded-full bg-emerald-400/10 text-emerald-400 border border-emerald-400/20 hover-scale hover:bg-emerald-400/20 hover:border-emerald-400/40 transition-all duration-300"
+              className="text-xs px-3 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/20 hover-scale hover:bg-primary/20 hover:border-primary/40 transition-all duration-300"
               style={{ transitionDelay: `${si * 50}ms` }}
             >
               {s}

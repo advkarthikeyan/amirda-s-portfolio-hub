@@ -43,7 +43,7 @@ export const Navbar = () => {
       <nav className="container flex items-center justify-between gap-8">
         <a href="#home" className="font-display text-2xl font-semibold group">
           <span style={{ color: "#ffb71c" }} className="group-hover:text-accent transition-colors duration-300">A</span>
-          <span className="hover:text-emerald-400 transition-colors duration-300">mirda Varshini M N</span>
+          <span className="hover:text-primary transition-colors duration-300">mirda Varshini M N</span>
         </a>
 
         <ul className="hidden lg:flex items-center gap-6 lg:gap-8 text-sm text-muted-foreground absolute left-1/2 -translate-x-1/2">
@@ -66,7 +66,7 @@ export const Navbar = () => {
 
         <a
           href="#contact"
-          className="hidden lg:inline-flex px-5 py-2.5 rounded-full bg-gradient-to-r from-primary to-accent text-primary-foreground text-sm font-medium hover:shadow-[var(--shadow-glow)] hover:scale-105 transition-all duration-300"
+          className="hidden lg:inline-flex px-5 py-2.5 rounded-full bg-gradient-to-r from-primary to-secondary text-primary-foreground text-sm font-medium hover:shadow-[var(--shadow-glow)] hover:scale-105 transition-all duration-300"
         >
           Hire Me
         </a>
@@ -105,7 +105,7 @@ export const Navbar = () => {
           <a
             href="#contact"
             onClick={closeMenu}
-            className="px-5 py-2.5 rounded-full bg-gradient-to-r from-primary to-accent text-primary-foreground text-sm font-medium text-center hover:shadow-[var(--shadow-glow)] transition-all duration-300"
+            className="px-5 py-2.5 rounded-full bg-gradient-to-r from-primary to-secondary text-primary-foreground text-sm font-medium text-center hover:shadow-[var(--shadow-glow)] transition-all duration-300"
           >
             Hire Me
           </a>

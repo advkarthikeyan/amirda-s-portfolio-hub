@@ -27,7 +27,7 @@ export const Skills = () => {
   return (
     <section id="skills" className="py-24 md:py-32">
       <div className="container">
-        <p className="font-mono-tag mb-4 text-lime-500">// Skills</p>
+        <p className="font-mono-tag mb-4 text-emerald-400">// Skills</p>
         <h2 className="font-display text-4xl md:text-6xl mb-16 max-w-3xl">
           The <span className="text-gradient italic">stack</span> I ship with.
         </h2>
@@ -41,7 +41,7 @@ export const Skills = () => {
         {/* Education */}
         <div className="mt-16 glass-card rounded-3xl p-8 md:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-4 hover-lift">
           <div>
-            <p className="font-mono-tag text-red-500 mb-2">// Education</p>
+            <p className="font-mono-tag mb-2 text-accent">// Education</p>
             <h3 className="font-display text-2xl md:text-3xl">
               Master of Computer Applications (through BCA)
             </h3>

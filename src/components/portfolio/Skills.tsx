@@ -27,7 +27,7 @@ export const Skills = () => {
   return (
     <section id="skills" className="py-24 md:py-32">
       <div className="container">
-        <p className="font-mono-tag mb-4 text-emerald-400">// Skills</p>
+        <p className="font-mono-tag mb-4 text-destructive">// Skills</p>
         <h2 className="font-display text-4xl md:text-6xl mb-16 max-w-3xl">
           The <span className="text-gradient italic">stack</span> I ship with.
         </h2>

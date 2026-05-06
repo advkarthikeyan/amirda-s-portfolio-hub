@@ -7,12 +7,12 @@ export const Hero = () => {
       <div className="container grid lg:grid-cols-[1.3fr_1fr] gap-12 lg:gap-16 items-center">
         <div className="animate-fade-up">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-card/40 mb-8">
-            <span className="w-2 h-2 rounded-full bg-destructive-foreground animate-glow-pulse" />
+             <span className="w-2 h-2 rounded-full animate-glow-pulse bg-green-600" />
             <span className="text-xs text-muted-foreground">Open to Full Stack opportunities</span>
           </div>
 
-          <p className="font-mono-tag text-muted-foreground mb-6">
-            <span className="text-primary">.NET</span> · <span className="text-accent">Angular</span> · <span className="text-destructive-foreground">Full Stack</span>
+           <p className="font-mono-tag text-muted-foreground mb-6 uppercase tracking-wider">
+             <span className="text-primary">.NET</span> · <span className="text-accent">Angular</span> · <span className="text-purple-700">Full Stack</span>
           </p>
 
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl leading-[0.95] mb-8">
@@ -23,7 +23,7 @@ export const Hero = () => {
             I<em className="text-gradient not-italic font-semibold ml-3 md:ml-5">ship</em> software.
           </h1>
 
-          <p className="text-lg text-muted-foreground max-w-xl mb-10 text-left leading-7 tracking-normal whitespace-normal [word-spacing:0] sm:leading-relaxed">
+           <p className="text-lg text-muted-foreground max-w-xl mb-10 leading-7 tracking-normal whitespace-normal [word-spacing:0] sm:leading-relaxed text-justify">
             <span className="block mb-3 font-medium text-foreground">
               A Senior .NET-Angular Full Stack Developer (7+ Years)
             </span>
@@ -125,7 +125,7 @@ const FloatingTag = ({
   const colorClass = {
     primary: "text-primary",
     accent: "text-accent",
-    teal: "text-destructive-foreground",
+     teal: "text-purple-700",
   }[color];
   return (
     <div className={`absolute glass-card rounded-2xl px-4 py-3 ${className}`}>

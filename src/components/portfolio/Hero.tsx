@@ -33,7 +33,7 @@ export const Hero = () => {
           <div className="flex flex-wrap items-center gap-4 mb-10">
             <a
               href="#experience"
-              className="px-7 py-3.5 rounded-full bg-gradient-to-r from-primary to-[hsl(290_85%_60%)] text-primary-foreground font-medium hover:shadow-[var(--shadow-glow)] hover-scale transition-all"
+              className="px-7 py-3.5 rounded-full bg-gradient-to-r from-primary via-accent to-secondary text-secondary-foreground font-medium hover:shadow-[var(--shadow-glow)] hover-scale transition-all"
             >
               View My Work →
             </a>

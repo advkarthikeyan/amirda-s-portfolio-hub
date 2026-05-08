@@ -6,41 +6,37 @@ const experiences = [
     company: "Cognizant Technology Solutions",
     location: "Coimbatore",
     period: "Jul 2023 — Present",
-    project: "Pearson VUE",
-    stack: ["Angular 19", ".NET 8", "Microservices", "JIRA", "Git"],
-    bullets: [
-      "Architected and maintained exam development applications utilizing a Microservices architecture to ensure scalable and modular system performance.",
-      "Operated within an Agile framework, consistently delivering high-quality outputs through active participation in Sprint-based development cycles.",
-      "Managed the end-to-end development lifecycle for assigned user stories and defects, taking full ownership from initial design through to final Git repository integration.",
-      "Facilitated comprehensive workflow management by tracking project progress and status transitions across all developmental stages within JIRA.",
-    ],
-  },
-  {
-    role: "Software Developer",
-    company: "Cognizant Technology Solutions",
-    location: "Coimbatore",
-    period: "Jul 2023 — Present",
-    project: "Microsoft",
-    stack: [".NET 8", "Web API", "SQL", "Postman", "Swagger"],
-    bullets: [
-      "Engineered robust API controllers to manage comprehensive CRUD operations, ensuring seamless data orchestration and system reliability.",
-      "Validated endpoint functionality and performance through rigorous testing using Swagger and Postman to ensure alignment with technical specifications.",
-      "Resolved complex defects identified during the development phase, maintaining code integrity and optimizing application stability.",
-      "Developed and executed unit test cases to ensure high code coverage and the long-term maintainability of API endpoints.",
-      "Demonstrated a commitment to project timelines by consistently delivering high-quality solutions within strict Agile deadlines.",
-    ],
-  },
-  {
-    role: "Software Developer",
-    company: "Cognizant Technology Solutions",
-    location: "Coimbatore",
-    period: "Jul 2023 — Present",
-    project: "Pacific Gas and Electric (PGE)",
-    stack: [".NET 8", "Web API", "jQuery", "JavaScript", "SQL Server", "MVC"],
-    bullets: [
-      "Owned the complete SDLC for specialized utility applications focused on electric and gas line infrastructure.",
-      "Delivered ongoing development and production support for business-critical systems.",
-      "Drove applications from concept to production deployment with continuous post-launch support.",
+    projects: [
+      {
+        name: "Pearson VUE",
+        stack: ["Angular 19", ".NET 8", "Microservices", "JIRA", "Git"],
+        bullets: [
+          "Architected and maintained exam development applications utilizing a Microservices architecture to ensure scalable and modular system performance.",
+          "Operated within an Agile framework, consistently delivering high-quality outputs through active participation in Sprint-based development cycles.",
+          "Managed the end-to-end development lifecycle for assigned user stories and defects, taking full ownership from initial design through to final Git repository integration.",
+          "Facilitated comprehensive workflow management by tracking project progress and status transitions across all developmental stages within JIRA.",
+        ],
+      },
+      {
+        name: "Microsoft",
+        stack: [".NET 8", "Web API", "SQL", "Postman", "Swagger"],
+        bullets: [
+          "Engineered robust API controllers to manage comprehensive CRUD operations, ensuring seamless data orchestration and system reliability.",
+          "Validated endpoint functionality and performance through rigorous testing using Swagger and Postman to ensure alignment with technical specifications.",
+          "Resolved complex defects identified during the development phase, maintaining code integrity and optimizing application stability.",
+          "Developed and executed unit test cases to ensure high code coverage and the long-term maintainability of API endpoints.",
+          "Demonstrated a commitment to project timelines by consistently delivering high-quality solutions within strict Agile deadlines.",
+        ],
+      },
+      {
+        name: "Pacific Gas and Electric (PGE)",
+        stack: [".NET 8", "Web API", "jQuery", "JavaScript", "SQL Server", "MVC"],
+        bullets: [
+          "Owned the complete SDLC for specialized utility applications focused on electric and gas line infrastructure.",
+          "Delivered ongoing development and production support for business-critical systems.",
+          "Drove applications from concept to production deployment with continuous post-launch support.",
+        ],
+      },
     ],
   },
   {
@@ -48,13 +44,17 @@ const experiences = [
     company: "Aspire Systems India Pvt. Ltd.",
     location: "Chennai",
     period: "Dec 2021 — Jul 2023",
-    project: "TMRW Platform — GEMS Education",
-    stack: [".NET Core 3.1", "Angular 12", "PostgreSQL", "MongoDB", "HTML"],
-    bullets: [
-      "Integrated modules connecting teachers, students, parents and administrators on a unified platform.",
-      "Migrated manual academic workflows into the modern TMRW platform.",
-      "Designed and developed features tightly aligned to client specifications.",
-      "Prioritized client-reported issues with rapid bug-fixing and resolution.",
+    projects: [
+      {
+        name: "TMRW Platform — GEMS Education",
+        stack: [".NET Core 3.1", "Angular 12", "PostgreSQL", "MongoDB", "HTML"],
+        bullets: [
+          "Integrated modules connecting teachers, students, parents and administrators on a unified platform.",
+          "Migrated manual academic workflows into the modern TMRW platform.",
+          "Designed and developed features tightly aligned to client specifications.",
+          "Prioritized client-reported issues with rapid bug-fixing and resolution.",
+        ],
+      },
     ],
   },
   {
@@ -62,14 +62,18 @@ const experiences = [
     company: "Sierra ODC Pvt. Ltd.",
     location: "Coimbatore",
     period: "Feb 2019 — Sep 2021",
-    project: "VWR — CBILL System & eFACILITY",
-    stack: ["C#", "ASP.NET MVC", "Oracle", "jQuery", "Bootstrap", "DevExpress"],
-    bullets: [
-      "Developed finance-oriented applications generating customized invoice reports for VWR International.",
-      "Owned DevExpress XtraReports development and project release cycles.",
-      "Resolved Web API bugs and addressed client-reported issues end-to-end.",
-      "Assisted with resolving reported bugs in Time and Attendance, Project Management, and Help Desk modules.",
-      "Engaged in development activities related to product enhancement for workforce operations.",
+    projects: [
+      {
+        name: "VWR — CBILL System & eFACILITY",
+        stack: ["C#", "ASP.NET MVC", "Oracle", "jQuery", "Bootstrap", "DevExpress"],
+        bullets: [
+          "Developed finance-oriented applications generating customized invoice reports for VWR International.",
+          "Owned DevExpress XtraReports development and project release cycles.",
+          "Resolved Web API bugs and addressed client-reported issues end-to-end.",
+          "Assisted with resolving reported bugs in Time and Attendance, Project Management, and Help Desk modules.",
+          "Engaged in development activities related to product enhancement for workforce operations.",
+        ],
+      },
     ],
   },
 ];
@@ -141,29 +145,35 @@ const ExperienceCard = ({ exp, index }: { exp: typeof experiences[number]; index
           <span className="font-mono-tag text-accent shrink-0">{exp.period}</span>
         </div>
 
-        <p className="text-sm text-muted-foreground mb-4">
-          <span className="font-mono-tag text-teal mr-2">PROJECT</span>
-          {exp.project}
-        </p>
+        <div className="space-y-8">
+          {exp.projects.map((proj, pi) => (
+            <div key={pi} className={pi > 0 ? "pt-6 border-t border-border/50" : ""}>
+              <p className="text-sm text-muted-foreground mb-4">
+                <span className="font-mono-tag text-teal mr-2">PROJECT</span>
+                {proj.name}
+              </p>
 
-        <ul className="space-y-2 mb-6">
-          {exp.bullets.map((b, j) => (
-            <li key={j} className="flex gap-3 text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-              <span className="mt-2 shrink-0 w-1.5 h-1.5 rounded-full bg-emerald-400 group-hover:scale-150 transition-transform duration-300" />
-              <span>{b}</span>
-            </li>
-          ))}
-        </ul>
+              <ul className="space-y-2 mb-6">
+                {proj.bullets.map((b, j) => (
+                  <li key={j} className="flex gap-3 text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
+                    <span className="mt-2 shrink-0 w-1.5 h-1.5 rounded-full bg-emerald-400 group-hover:scale-150 transition-transform duration-300" />
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
 
-        <div className="flex flex-wrap gap-2">
-          {exp.stack.map((s, si) => (
-            <span
-              key={s}
-              className="text-xs px-3 py-1.5 rounded-full bg-emerald-400/10 text-emerald-400 border border-emerald-400/20 hover-scale hover:bg-emerald-400/20 hover:border-emerald-400/40 transition-all duration-300"
-              style={{ transitionDelay: `${si * 50}ms` }}
-            >
-              {s}
-            </span>
+              <div className="flex flex-wrap gap-2">
+                {proj.stack.map((s, si) => (
+                  <span
+                    key={s}
+                    className="text-xs px-3 py-1.5 rounded-full bg-emerald-400/10 text-emerald-400 border border-emerald-400/20 hover-scale hover:bg-emerald-400/20 hover:border-emerald-400/40 transition-all duration-300"
+                    style={{ transitionDelay: `${si * 50}ms` }}
+                  >
+                    {s}
+                  </span>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
 

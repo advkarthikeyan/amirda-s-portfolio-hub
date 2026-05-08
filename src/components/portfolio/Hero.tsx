@@ -104,9 +104,30 @@ export const Hero = () => {
               />
             </div>
 
-            <FloatingTag className="-top-4 -left-6 hover-scale animate-float" label="Experience" value="7+ Years" color="primary" delay={0.8} />
-            <FloatingTag className="top-1/2 -right-8 hover-scale animate-float" label="Stack" value=".NET 8" color="accent" delay={1.0} />
-            <FloatingTag className="-bottom-4 left-4 hover-scale animate-float" label="Frontend" value="Angular" color="purple" delay={1.2} />
+            <FloatingTag
+              className="-top-4 -left-6 hover-scale animate-float"
+              style={{ animationDuration: "5s", animationDelay: "0s" }}
+              label="Experience"
+              value="7+ Years"
+              color="primary"
+              delay={0.8}
+            />
+            <FloatingTag
+              className="top-1/2 -right-8 hover-scale animate-float"
+              style={{ animationDuration: "7s", animationDelay: "-2s" }}
+              label="Stack"
+              value=".NET 8"
+              color="accent"
+              delay={1.0}
+            />
+            <FloatingTag
+              className="-bottom-4 left-4 hover-scale animate-float"
+              style={{ animationDuration: "6s", animationDelay: "-3s" }}
+              label="Frontend"
+              value="Angular"
+              color="purple"
+              delay={1.2}
+            />
           </div>
         </div>
       </div>
@@ -157,12 +178,14 @@ const FloatingTag = ({
   value,
   color,
   delay = 0,
+  style,
 }: {
   className: string;
   label: string;
   value: string;
   color: "primary" | "accent" | "teal" | "purple";
   delay?: number;
+  style?: React.CSSProperties;
 }) => {
   const colorClass = {
     primary: "text-emerald-400",
@@ -171,7 +194,10 @@ const FloatingTag = ({
     purple: "text-purple-400",
   }[color];
   return (
-    <div className={`absolute glass-card rounded-2xl px-4 py-3 ${className} animate-scale-in`} style={{ animationDelay: `${delay}s` }}>
+    <div
+      className={`absolute glass-card rounded-2xl px-4 py-3 ${className}`}
+      style={style}
+    >
       <p className={`font-mono-tag ${colorClass}`}>{label}</p>
       <p className="font-display text-lg font-semibold">{value}</p>
     </div>

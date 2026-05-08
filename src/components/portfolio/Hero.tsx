@@ -1,5 +1,5 @@
 import { Linkedin, Mail, Phone, Briefcase, ChevronDown } from "lucide-react";
-import profile from "@/assets/profile-placeholder.jpg";
+import profile from "@/assets/profile.png";
 
 export const Hero = () => {
   return (

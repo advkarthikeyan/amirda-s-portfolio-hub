@@ -104,9 +104,9 @@ export const Hero = () => {
               />
             </div>
 
-            <FloatingTag className="-top-4 -left-6 hover-scale animate-bounce-subtle" label="Experience" value="7+ Years" color="primary" delay={0.8} />
-            <FloatingTag className="top-1/2 -right-8 hover-scale animate-bounce-subtle" label="Stack" value=".NET 8" color="accent" delay={1.0} />
-            <FloatingTag className="-bottom-4 left-4 hover-scale animate-bounce-subtle" label="Frontend" value="Angular" color="purple" delay={1.2} />
+            <FloatingTag className="-top-4 -left-6 hover-scale animate-float" label="Experience" value="7+ Years" color="primary" delay={0.8} />
+            <FloatingTag className="top-1/2 -right-8 hover-scale animate-float" label="Stack" value=".NET 8" color="accent" delay={1.0} />
+            <FloatingTag className="-bottom-4 left-4 hover-scale animate-float" label="Frontend" value="Angular" color="purple" delay={1.2} />
           </div>
         </div>
       </div>

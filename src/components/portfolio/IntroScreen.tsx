@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 
 interface IntroScreenProps {
   onComplete: () => void;
@@ -6,23 +6,58 @@ interface IntroScreenProps {
 
 export const IntroScreen = ({ onComplete }: IntroScreenProps) => {
   const [phase, setPhase] = useState<"enter" | "exit">("enter");
+  const [typedName, setTypedName] = useState("");
+  const [showTagline, setShowTagline] = useState(false);
+  const [taglineWords, setTaglineWords] = useState<string[]>([]);
 
+  const fullName = "Amirda Varshini M N";
+  const taglineParts = ["I build.", "I scale.", "I ship software."];
+
+  const handleComplete = useCallback(onComplete, [onComplete]);
+
+  // Typewriter for name
   useEffect(() => {
-    const exitTimer = setTimeout(() => setPhase("exit"), 3200);
-    const completeTimer = setTimeout(onComplete, 4000);
+    let i = 0;
+    const interval = setInterval(() => {
+      if (i < fullName.length) {
+        setTypedName(fullName.slice(0, i + 1));
+        i++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 80);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Show tagline after name finishes typing
+  useEffect(() => {
+    const nameDuration = fullName.length * 80 + 400;
+    const taglineTimer = setTimeout(() => setShowTagline(true), nameDuration);
+    return () => clearTimeout(taglineTimer);
+  }, []);
+
+  // Stagger tagline words
+  useEffect(() => {
+    if (!showTagline) return;
+    taglineParts.forEach((word, i) => {
+      setTimeout(() => {
+        setTaglineWords((prev) => [...prev, word]);
+      }, i * 400);
+    });
+  }, [showTagline]);
+
+  // Exit after everything is shown
+  useEffect(() => {
+    const nameDuration = fullName.length * 80 + 400;
+    const taglineDuration = taglineParts.length * 400 + 800;
+    const totalDuration = nameDuration + taglineDuration + 600;
+    const exitTimer = setTimeout(() => setPhase("exit"), totalDuration);
+    const completeTimer = setTimeout(handleComplete, totalDuration + 800);
     return () => {
       clearTimeout(exitTimer);
       clearTimeout(completeTimer);
     };
-  }, [onComplete]);
-
-  const nameLines = [
-    { text: "Amirda", delay: 0.2 },
-    { text: "Varshini", delay: 0.5 },
-    { text: "M N", delay: 0.8 },
-  ];
-
-  const tagline = "I build. I scale. I ship software.";
+  }, [handleComplete]);
 
   return (
     <div
@@ -31,40 +66,38 @@ export const IntroScreen = ({ onComplete }: IntroScreenProps) => {
       }`}
     >
       {/* Subtle radial glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(var(--primary)/0.08)_0%,transparent_70%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(var(--accent)/0.06)_0%,transparent_70%)]" />
 
-      <div className="relative flex flex-col items-center">
-        {/* Name lines */}
-        {nameLines.map((line, lineIdx) => (
-          <div key={lineIdx} className="overflow-hidden">
-            <h1
-              className={`font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight ${
-                lineIdx === 1 ? "text-gradient" : ""
-              }`}
-              style={{ perspective: "600px" }}
-            >
-              {line.text.split("").map((char, i) => (
-                <span
-                  key={i}
-                  className="inline-block intro-char"
-                  style={{ animationDelay: `${i * 0.06 + line.delay}s` }}
-                >
-                  {char}
-                </span>
-              ))}
-            </h1>
-          </div>
-        ))}
-
-        {/* Accent line */}
-        <div className="intro-line mt-4 h-[2px] w-0 bg-gradient-to-r from-primary to-accent" />
-
-        {/* Tagline */}
-        <div className="overflow-hidden mt-6">
-          <p className="font-mono-tag text-muted-foreground text-sm md:text-base tracking-widest intro-tagline">
-            {tagline}
-          </p>
+      <div className="relative flex flex-col items-center gap-6">
+        {/* Big "A" letter */}
+        <div className="overflow-hidden">
+          <span className="intro-big-a font-display text-[10rem] md:text-[14rem] lg:text-[18rem] font-bold leading-none text-accent">
+            A
+          </span>
         </div>
+
+        {/* Name with typewriter */}
+        <div className="h-10 md:h-12 flex items-center justify-center">
+          <h2 className="font-display text-2xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-foreground">
+            {typedName}
+            <span className="animate-blink text-accent">|</span>
+          </h2>
+        </div>
+
+        {/* Tagline with staggered word reveal */}
+        {showTagline && (
+          <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 min-h-[2rem]">
+            {taglineWords.map((word, i) => (
+              <span
+                key={i}
+                className="font-mono-tag text-sm md:text-base tracking-widest text-muted-foreground intro-tagline-word"
+                style={{ animationDelay: `${i * 0.1}s` }}
+              >
+                {word}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

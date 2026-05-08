@@ -457,42 +457,28 @@ All colors MUST be HSL.
   }
 
   /* Intro screen animations */
-  .intro-char {
+  .intro-big-a {
     opacity: 0;
-    transform: translateY(100%) rotateX(-80deg);
-    animation: intro-char-reveal 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    transform: scale(0.3);
+    filter: blur(20px);
+    animation: intro-a-reveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards;
   }
 
-  @keyframes intro-char-reveal {
+  @keyframes intro-a-reveal {
     to {
       opacity: 1;
-      transform: translateY(0) rotateX(0deg);
+      transform: scale(1);
+      filter: blur(0);
     }
   }
 
-  .intro-text-left {
-    perspective: 600px;
-  }
-
-  .intro-text-right {
-    perspective: 600px;
-  }
-
-  .intro-line {
-    animation: intro-line-expand 0.8s cubic-bezier(0.22, 1, 0.36, 1) 1.1s forwards;
-  }
-
-  @keyframes intro-line-expand {
-    to { width: 120px; }
-  }
-
-  .intro-tagline {
+  .intro-tagline-word {
     opacity: 0;
-    transform: translateY(20px);
-    animation: intro-tagline-reveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) 1.4s forwards;
+    transform: translateY(15px);
+    animation: intro-tagline-word-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
 
-  @keyframes intro-tagline-reveal {
+  @keyframes intro-tagline-word-in {
     to {
       opacity: 1;
       transform: translateY(0);

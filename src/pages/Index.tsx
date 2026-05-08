@@ -5,6 +5,7 @@ import { About } from "@/components/portfolio/About";
 import { Experience } from "@/components/portfolio/Experience";
 import { Skills } from "@/components/portfolio/Skills";
 import { Contact, Footer } from "@/components/portfolio/Contact";
+import { IntroScreen } from "@/components/portfolio/IntroScreen";
 
 const ScrollProgress = () => {
   const [progress, setProgress] = useState(0);
@@ -93,20 +94,25 @@ const BackToTop = () => {
 };
 
 const Index = () => {
+  const [showIntro, setShowIntro] = useState(true);
+
   return (
-    <main className="min-h-screen relative">
-      <ScrollProgress />
-      <CursorGlow />
-      <Particles />
-      <Navbar />
-      <Hero />
-      <About />
-      <Experience />
-      <Skills />
-      <Contact />
-      <Footer />
-      <BackToTop />
-    </main>
+    <>
+      {showIntro && <IntroScreen onComplete={() => setShowIntro(false)} />}
+      <main className="min-h-screen relative">
+        <ScrollProgress />
+        <CursorGlow />
+        <Particles />
+        <Navbar />
+        <Hero />
+        <About />
+        <Experience />
+        <Skills />
+        <Contact />
+        <Footer />
+        <BackToTop />
+      </main>
+    </>
   );
 };
 

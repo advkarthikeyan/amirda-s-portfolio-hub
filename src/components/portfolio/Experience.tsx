@@ -64,12 +64,18 @@ const experiences = [
     period: "Feb 2019 — Sep 2021",
     projects: [
       {
-        name: "VWR — CBILL System & eFACILITY",
-        stack: ["C#", "ASP.NET MVC", "Oracle", "jQuery", "Bootstrap", "DevExpress"],
+        name: "VWR — CBILL System",
+        stack: ["C#", "ASP.NET MVC", "Oracle", "JavaScript", "jQuery", "HTML", "CSS", "Bootstrap", "Web API", "DevExpress"],
         bullets: [
           "Developed finance-oriented applications generating customized invoice reports for VWR International.",
-          "Owned DevExpress XtraReports development and project release cycles.",
-          "Resolved Web API bugs and addressed client-reported issues end-to-end.",
+          "Managed DevExpress XtraReports development and project release cycles.",
+          "Addressed Web API bug fixes and client-reported issues end-to-end.",
+        ],
+      },
+      {
+        name: "Enterprise Facility Management System (eFACILITY)",
+        stack: ["C#", "ASP.NET MVC", "Oracle", "JavaScript", "jQuery", "Bootstrap"],
+        bullets: [
           "Assisted with resolving reported bugs in Time and Attendance, Project Management, and Help Desk modules.",
           "Engaged in development activities related to product enhancement for workforce operations.",
         ],

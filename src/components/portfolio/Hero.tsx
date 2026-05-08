@@ -139,7 +139,7 @@ export const Hero = () => {
             <div key={i} className="flex items-center gap-8 pr-8">
               {[".NET 8", "ANGULAR", "C#", "SQL SERVER", "WEB API", "ENTITY FRAMEWORK", "MONGODB", "AZURE DEVOPS", "JAVASCRIPT", "MVC"].map((s, idx) => (
                 <span key={s} className="flex items-center gap-8 whitespace-nowrap animate-shimmer rounded px-2 py-1">
-                  <span style={idx % 2 === 1 ? { color: "#FFCC00" } : undefined}>{s}</span>
+                  <span style={idx % 2 === 1 ? { color: "#ff4c6a" } : undefined}>{s}</span>
                   <span className="text-accent">·</span>
                 </span>
               ))}

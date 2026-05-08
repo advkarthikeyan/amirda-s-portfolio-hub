@@ -3,7 +3,7 @@ import { useReveal } from "@/hooks/use-reveal";
 const groups: { title: string; color: string; items: string[] }[] = [
   {
     title: "Backend",
-    color: "text-emerald-400",
+    color: "text-primary",
     items: [".NET 8", "C#", "Web API", "Entity Framework", "ADO.NET", "MVC"],
   },
   {
@@ -13,12 +13,12 @@ const groups: { title: string; color: string; items: string[] }[] = [
   },
   {
     title: "Databases",
-    color: "text-teal",
+    color: "text-purple-400",
     items: ["SQL Server", "Oracle", "PostgreSQL", "MongoDB"],
   },
   {
     title: "Tools & DevOps",
-    color: "text-emerald-400",
+    color: "text-primary",
     items: ["Azure DevOps", "GitHub", "TFS", "DevExpress", "Putty"],
   },
 ];
@@ -32,7 +32,7 @@ export const Skills = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/3 rounded-full blur-3xl animate-morph" />
 
       <div className="container relative">
-        <p className="font-mono-tag mb-4 text-emerald-400 reveal-blur" style={{ transitionDelay: "0.1s" }}>
+        <p className="font-mono-tag mb-4 text-accent reveal-blur" style={{ transitionDelay: "0.1s" }}>
           // Skills
         </p>
         <h2

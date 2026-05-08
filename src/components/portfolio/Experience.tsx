@@ -93,7 +93,7 @@ export const Experience = () => {
       <div className="absolute top-1/3 -right-20 w-80 h-80 bg-accent/5 rounded-full blur-3xl animate-morph" style={{ animationDelay: "-2s" }} />
 
       <div className="container relative">
-        <p className="font-mono-tag mb-4 text-emerald-400 reveal-blur" style={{ transitionDelay: "0.1s" }}>
+        <p className="font-mono-tag mb-4 text-accent reveal-blur" style={{ transitionDelay: "0.1s" }}>
           // Experience
         </p>
         <h2
@@ -155,14 +155,14 @@ const ExperienceCard = ({ exp, index }: { exp: typeof experiences[number]; index
           {exp.projects.map((proj, pi) => (
             <div key={pi} className={pi > 0 ? "pt-6 border-t border-border/50" : ""}>
               <p className="text-sm text-muted-foreground mb-4">
-                <span className="font-mono-tag text-teal mr-2">PROJECT</span>
+                <span className="font-mono-tag text-accent mr-2">PROJECT</span>
                 {proj.name}
               </p>
 
               <ul className="space-y-2 mb-6">
                 {proj.bullets.map((b, j) => (
                   <li key={j} className="flex gap-3 text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    <span className="mt-2 shrink-0 w-1.5 h-1.5 rounded-full bg-emerald-400 group-hover:scale-150 transition-transform duration-300" />
+                    <span className="mt-2 shrink-0 w-1.5 h-1.5 rounded-full bg-accent group-hover:scale-150 transition-transform duration-300" />
                     <span>{b}</span>
                   </li>
                 ))}
@@ -172,7 +172,7 @@ const ExperienceCard = ({ exp, index }: { exp: typeof experiences[number]; index
                 {proj.stack.map((s, si) => (
                   <span
                     key={s}
-                    className="text-xs px-3 py-1.5 rounded-full bg-emerald-400/10 text-emerald-400 border border-emerald-400/20 hover-scale hover:bg-emerald-400/20 hover:border-emerald-400/40 transition-all duration-300"
+                    className="text-xs px-3 py-1.5 rounded-full bg-accent/10 text-accent border border-accent/20 hover-scale hover:bg-accent/20 hover:border-accent/40 transition-all duration-300"
                     style={{ transitionDelay: `${si * 50}ms` }}
                   >
                     {s}

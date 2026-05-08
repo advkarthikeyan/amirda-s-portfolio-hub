@@ -27,7 +27,7 @@ export const Hero = () => {
             className="font-mono-tag text-muted-foreground mb-6 uppercase tracking-wider animate-slide-up"
             style={{ animationDelay: "0.2s" }}
           >
-            <span className="text-emerald-400">.NET</span> · <span className="text-accent">Angular</span> · <span className="text-purple-400">Full Stack</span>
+            <span className="text-primary">.NET</span> · <span className="text-accent">Angular</span> · <span className="text-purple-400">Full Stack</span>
           </p>
 
           {/* Main heading - clip reveal */}
@@ -54,7 +54,7 @@ export const Hero = () => {
           <div className="flex flex-wrap items-center gap-4 mb-10 animate-scale-in" style={{ animationDelay: "0.6s" }}>
             <a
               href="#experience"
-              className="group relative px-7 py-3.5 rounded-full bg-gradient-to-r from-primary to-[hsl(41_100%_55%)] text-primary-foreground font-medium hover:shadow-[var(--shadow-glow)] transition-all overflow-hidden hover-ripple"
+              className="group relative px-7 py-3.5 rounded-full bg-gradient-to-r from-primary to-accent text-primary-foreground font-medium hover:shadow-[var(--shadow-glow)] transition-all overflow-hidden hover-ripple"
             >
               <span className="relative z-10">View My Work</span>
               <span className="relative z-10 ml-2 inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
@@ -139,8 +139,8 @@ export const Hero = () => {
             <div key={i} className="flex items-center gap-8 pr-8">
               {[".NET 8", "ANGULAR", "C#", "SQL SERVER", "WEB API", "ENTITY FRAMEWORK", "MONGODB", "AZURE DEVOPS", "JAVASCRIPT", "MVC"].map((s, idx) => (
                 <span key={s} className="flex items-center gap-8 whitespace-nowrap animate-shimmer rounded px-2 py-1">
-                  <span style={idx % 2 === 1 ? { color: "#ffb71c" } : undefined}>{s}</span>
-                  <span className="text-emerald-400">·</span>
+                  <span style={idx % 2 === 1 ? { color: "#AD49E1" } : undefined}>{s}</span>
+                  <span className="text-accent">·</span>
                 </span>
               ))}
             </div>
@@ -165,7 +165,7 @@ const SocialIcon = ({ href, label, children, delay = 0 }: { href: string; label:
     target="_blank"
     rel="noopener noreferrer"
     aria-label={label}
-    className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-emerald-400 hover:bg-emerald-400/10 transition-all hover:scale-110 hover:-translate-y-1 animate-scale-in"
+    className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-accent hover:bg-accent/10 transition-all hover:scale-110 hover:-translate-y-1 animate-scale-in"
     style={{ animationDelay: `${delay}s` }}
   >
     {children}
@@ -183,14 +183,14 @@ const FloatingTag = ({
   className: string;
   label: string;
   value: string;
-  color: "primary" | "accent" | "teal" | "purple";
+  color: "primary" | "accent" | "secondary" | "purple";
   delay?: number;
   style?: React.CSSProperties;
 }) => {
   const colorClass = {
-    primary: "text-emerald-400",
+    primary: "text-primary",
     accent: "text-accent",
-    teal: "text-teal",
+    secondary: "text-secondary",
     purple: "text-purple-400",
   }[color];
   return (

@@ -42,8 +42,8 @@ export const Navbar = () => {
     >
       <nav className="container flex items-center justify-between gap-8">
         <a href="#home" className="font-display text-2xl font-semibold group">
-          <span style={{ color: "#ffb71c" }} className="group-hover:text-accent transition-colors duration-300">A</span>
-          <span className="hover:text-emerald-400 transition-colors duration-300">mirda Varshini M N</span>
+          <span style={{ color: "#AD49E1" }} className="group-hover:text-accent transition-colors duration-300">A</span>
+          <span className="hover:text-accent transition-colors duration-300">mirda Varshini M N</span>
         </a>
 
         <ul className="hidden lg:flex items-center gap-6 lg:gap-8 text-sm text-muted-foreground absolute left-1/2 -translate-x-1/2">

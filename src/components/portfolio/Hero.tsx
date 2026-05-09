@@ -39,6 +39,15 @@ export const Hero = () => {
             DEV<span className="text-primary">_</span>
           </h1>
 
+          {/* Tagline lines — staggered upward reveal */}
+          <div className="mb-8 font-display text-xl md:text-3xl font-semibold space-y-1 overflow-hidden">
+            <p className="animate-slide-up" style={{ animationDelay: "0.9s" }}>I build.</p>
+            <p className="animate-slide-up" style={{ animationDelay: "1.1s" }}>I scale.</p>
+            <p className="animate-slide-up" style={{ animationDelay: "1.3s" }}>
+              I <span className="text-primary">ship</span> software.
+            </p>
+          </div>
+
           {/* Description - blur in */}
           <p
             className="text-lg text-muted-foreground max-w-xl mb-10 leading-7 tracking-normal whitespace-normal [word-spacing:0] sm:leading-relaxed text-justify animate-blur-in"

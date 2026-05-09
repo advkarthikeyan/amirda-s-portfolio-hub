@@ -8,50 +8,50 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Neon Void palette — light grayscale base with neon lime accent */
-    --background: 0 0% 92%;
-    --foreground: 0 0% 8%;
+    /* Neon Void palette — dark base with neon lime accent */
+    --background: 0 0% 6%;
+    --foreground: 0 0% 98%;
 
-    --card: 0 0% 96%;
-    --card-foreground: 0 0% 8%;
+    --card: 0 0% 9%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 96%;
-    --popover-foreground: 0 0% 8%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 70 90% 45%;
-    --primary-foreground: 0 0% 8%;
+    --primary: 70 90% 55%;
+    --primary-foreground: 0 0% 6%;
 
-    --secondary: 0 0% 88%;
-    --secondary-foreground: 0 0% 8%;
+    --secondary: 0 0% 14%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 0 0% 90%;
-    --muted-foreground: 0 0% 35%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 65%;
 
-    --accent: 70 90% 45%;
-    --accent-foreground: 0 0% 8%;
+    --accent: 70 90% 55%;
+    --accent-foreground: 0 0% 6%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 0 0% 80%;
-    --input: 0 0% 88%;
-    --ring: 70 90% 45%;
+    --border: 0 0% 18%;
+    --input: 0 0% 14%;
+    --ring: 70 90% 55%;
 
     --radius: 1rem;
 
-    --teal: 70 90% 45%;
+    --teal: 70 90% 55%;
 
     /* Gradients */
-    --gradient-hero: radial-gradient(ellipse at top left, hsl(0 0% 100% / 0.8), transparent 60%),
-                     radial-gradient(ellipse at bottom right, hsl(70 90% 45% / 0.18), transparent 55%),
-                     linear-gradient(135deg, hsl(0 0% 95%), hsl(0 0% 88%));
-    --gradient-text: linear-gradient(135deg, hsl(0 0% 8%), hsl(0 0% 25%));
-    --gradient-accent: linear-gradient(135deg, hsl(70 90% 45%), hsl(70 90% 55%));
-    --gradient-card: linear-gradient(160deg, hsl(0 0% 100% / 0.6), hsl(0 0% 96% / 0.6));
+    --gradient-hero: radial-gradient(ellipse at top left, hsl(0 0% 12% / 0.9), transparent 60%),
+                     radial-gradient(ellipse at bottom right, hsl(70 90% 55% / 0.15), transparent 55%),
+                     linear-gradient(135deg, hsl(0 0% 6%), hsl(0 0% 4%));
+    --gradient-text: linear-gradient(135deg, hsl(0 0% 98%), hsl(0 0% 70%));
+    --gradient-accent: linear-gradient(135deg, hsl(70 90% 55%), hsl(70 90% 65%));
+    --gradient-card: linear-gradient(160deg, hsl(0 0% 10% / 0.8), hsl(0 0% 6% / 0.8));
 
     /* Shadows / glow */
-    --shadow-glow: 0 0 60px hsl(70 90% 45% / 0.45);
-    --shadow-card: 0 20px 60px -20px hsl(0 0% 0% / 0.15);
+    --shadow-glow: 0 0 60px hsl(70 90% 55% / 0.45);
+    --shadow-card: 0 20px 60px -20px hsl(0 0% 0% / 0.8);
 
     --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
 

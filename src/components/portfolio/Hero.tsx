@@ -31,22 +31,13 @@ export const Hero = () => {
           </p>
 
           {/* Main heading - clip reveal */}
-          <h1 className="font-display font-black text-6xl md:text-8xl lg:text-9xl leading-[0.95] mb-8 animate-clip-reveal tracking-tight" style={{ animationDelay: "0.3s" }}>
-            FULL
+          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl leading-[1.05] mb-8 animate-clip-reveal" style={{ animationDelay: "0.3s" }}>
+            I build.
             <br />
-            STACK
+            I scale.
             <br />
-            DEV<span className="text-primary">_</span>
+            I<em className="text-gradient not-italic font-semibold ml-3 md:ml-5 animate-gradient">ship</em> software.
           </h1>
-
-          {/* Tagline lines — staggered upward reveal */}
-          <div className="mb-8 font-display text-xl md:text-3xl font-semibold space-y-1 overflow-hidden">
-            <p className="animate-slide-up" style={{ animationDelay: "0.9s" }}>I build.</p>
-            <p className="animate-slide-up" style={{ animationDelay: "1.1s" }}>I scale.</p>
-            <p className="animate-slide-up" style={{ animationDelay: "1.3s" }}>
-              I <span className="text-primary">ship</span> software.
-            </p>
-          </div>
 
           {/* Description - blur in */}
           <p

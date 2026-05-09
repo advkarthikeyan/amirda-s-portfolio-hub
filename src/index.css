@@ -184,16 +184,48 @@ All colors MUST be HSL.
     animation: pulse-ring 2s cubic-bezier(0.22, 1, 0.36, 1) infinite;
   }
 
-  /* Kinetic typography - upward scroll one by one */
-  @keyframes kinetic-roll {
-    0%, 26%   { transform: translateY(0%); }
-    33%, 59%  { transform: translateY(-100%); }
-    66%, 92%  { transform: translateY(-200%); }
-    100%      { transform: translateY(-300%); }
+  /* Kinetic typography - text dissolve */
+  @keyframes char-dissolve-in {
+    0% {
+      opacity: 0;
+      transform: translateY(20px) scale(0.5) rotate(8deg);
+      filter: blur(6px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1) rotate(0deg);
+      filter: blur(0);
+    }
   }
 
-  .animate-kinetic-roll {
-    animation: kinetic-roll 6s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  @keyframes char-dissolve-out {
+    0% {
+      opacity: 1;
+      transform: translateY(0) scale(1) rotate(0deg);
+      filter: blur(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-20px) scale(0.5) rotate(-8deg);
+      filter: blur(6px);
+    }
+  }
+
+  .dissolve-char {
+    opacity: 0;
+  }
+
+  .dissolve-in .dissolve-char {
+    animation: char-dissolve-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  .dissolve-out .dissolve-char {
+    opacity: 1;
+    animation: char-dissolve-out 0.5s cubic-bezier(0.55, 0, 1, 0.45) forwards;
+  }
+
+  .dissolve-hold .dissolve-char {
+    opacity: 1;
   }
 
   /* Spin slow */

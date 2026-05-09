@@ -1,6 +1,58 @@
 import { Linkedin, Mail, Phone, Briefcase, ChevronDown } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import profile from "@/assets/profile.png";
+
+const phrases = ["I build.", "I scale.", "I ship software."];
+
+const KineticTagline = () => {
+  const [phase, setPhase] = useState<"dissolve-in" | "hold" | "dissolve-out">("dissolve-in");
+  const [index, setIndex] = useState(0);
+
+  const next = useCallback(() => {
+    setPhase("dissolve-out");
+    setTimeout(() => {
+      setIndex((i) => (i + 1) % phrases.length);
+      setPhase("dissolve-in");
+    }, 600);
+  }, []);
+
+  useEffect(() => {
+    if (phase === "dissolve-in") {
+      const t = setTimeout(() => setPhase("hold"), 700);
+      return () => clearTimeout(t);
+    }
+    if (phase === "hold") {
+      const t = setTimeout(next, 1800);
+      return () => clearTimeout(t);
+    }
+  }, [phase, next]);
+
+  const animClass =
+    phase === "dissolve-in"
+      ? "dissolve-in"
+      : phase === "dissolve-out"
+      ? "dissolve-out"
+      : "dissolve-hold";
+
+  return (
+    <div
+      className="font-display text-xl md:text-2xl lg:text-3xl font-semibold mb-8 text-accent h-[1.3em] overflow-hidden"
+      aria-label="I build. I scale. I ship software."
+    >
+      <div className={`dissolve-word ${animClass}`}>
+        {phrases[index].split("").map((char, i) => (
+          <span
+            key={i}
+            className="inline-block dissolve-char"
+            style={{ animationDelay: `${i * 0.03}s` }}
+          >
+            {char === " " ? "\u00A0" : char}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const TypingDev = () => {
   const suffix = "ELOPER";
@@ -74,18 +126,8 @@ export const Hero = () => {
             <TypingDev />
           </h1>
 
-          {/* Kinetic typography tagline - upward scroll one by one */}
-          <div
-            className="font-display text-xl md:text-2xl lg:text-3xl font-semibold mb-8 text-accent h-[1.3em] overflow-hidden"
-            aria-label="I build. I scale. I ship software."
-          >
-            <div className="animate-kinetic-roll leading-[1.3]">
-              <div>I build.</div>
-              <div>I scale.</div>
-              <div>I ship software.</div>
-              <div>I build.</div>
-            </div>
-          </div>
+          {/* Kinetic typography tagline - text dissolve */}
+          <KineticTagline />
 
           {/* Description - blur in */}
           <p

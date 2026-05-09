@@ -484,17 +484,16 @@ All colors MUST be HSL.
     }
   }
 
-  .intro-tagline-word {
+  .intro-role-word {
+    display: inline-block;
     opacity: 0;
-    transform: translateY(15px);
-    animation: intro-tagline-word-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    transform: translateY(100%);
+    transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1), transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
-  @keyframes intro-tagline-word-in {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  .intro-role-word-visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .intro-exit {

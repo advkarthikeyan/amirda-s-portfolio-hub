@@ -7,11 +7,14 @@ interface IntroScreenProps {
 export const IntroScreen = ({ onComplete }: IntroScreenProps) => {
   const [phase, setPhase] = useState<"enter" | "exit">("enter");
   const [typedName, setTypedName] = useState("");
-  const [showTagline, setShowTagline] = useState(false);
-  const [taglineWords, setTaglineWords] = useState<string[]>([]);
+  const [visibleWords, setVisibleWords] = useState<number>(0);
 
   const fullName = "Amirda Varshini M N";
-  const taglineParts = ["I build.", "I scale.", "I ship software."];
+  const taglineWords = [
+    { text: "I build.", color: "text-primary" },
+    { text: "I scale.", color: "text-accent" },
+    { text: "I ship software.", color: "text-gradient" },
+  ];
 
   const handleComplete = useCallback(onComplete, [onComplete]);
 
@@ -29,27 +32,18 @@ export const IntroScreen = ({ onComplete }: IntroScreenProps) => {
     return () => clearInterval(interval);
   }, []);
 
-  // Show tagline after name finishes typing
+  // Stagger tagline words after name finishes
   useEffect(() => {
     const nameDuration = fullName.length * 80 + 400;
-    const taglineTimer = setTimeout(() => setShowTagline(true), nameDuration);
-    return () => clearTimeout(taglineTimer);
-  }, []);
-
-  // Stagger tagline words
-  useEffect(() => {
-    if (!showTagline) return;
-    taglineParts.forEach((word, i) => {
-      setTimeout(() => {
-        setTaglineWords((prev) => [...prev, word]);
-      }, i * 400);
+    taglineWords.forEach((_, i) => {
+      setTimeout(() => setVisibleWords((v) => v + 1), nameDuration + i * 350);
     });
-  }, [showTagline]);
+  }, []);
 
   // Exit after everything is shown
   useEffect(() => {
     const nameDuration = fullName.length * 80 + 400;
-    const taglineDuration = taglineParts.length * 400 + 800;
+    const taglineDuration = taglineWords.length * 350 + 800;
     const totalDuration = nameDuration + taglineDuration + 600;
     const exitTimer = setTimeout(() => setPhase("exit"), totalDuration);
     const completeTimer = setTimeout(handleComplete, totalDuration + 800);
@@ -84,20 +78,19 @@ export const IntroScreen = ({ onComplete }: IntroScreenProps) => {
           </h2>
         </div>
 
-        {/* Tagline with staggered word reveal */}
-        {showTagline && (
-          <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 min-h-[2rem]">
-            {taglineWords.map((word, i) => (
-              <span
-                key={i}
-                className="font-mono-tag text-sm md:text-base tracking-widest text-muted-foreground intro-tagline-word"
-                style={{ animationDelay: `${i * 0.1}s` }}
-              >
-                {word}
-              </span>
-            ))}
-          </div>
-        )}
+        {/* Tagline with staggered colored word reveal */}
+        <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 min-h-[2rem]">
+          {taglineWords.map((word, i) => (
+            <span
+              key={i}
+              className={`font-mono-tag text-sm md:text-base tracking-widest intro-role-word ${
+                i < visibleWords ? "intro-role-word-visible" : ""
+              } ${word.color}`}
+            >
+              {word.text}
+            </span>
+          ))}
+        </div>
       </div>
     </div>
   );

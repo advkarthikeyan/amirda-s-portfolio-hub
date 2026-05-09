@@ -1,5 +1,42 @@
 import { Linkedin, Mail, Phone, Briefcase, ChevronDown } from "lucide-react";
+import { useEffect, useState } from "react";
 import profile from "@/assets/profile.png";
+
+const TypingDev = () => {
+  const suffix = "ELOPER";
+  const [visibleCount, setVisibleCount] = useState(0);
+  const [deleting, setDeleting] = useState(false);
+
+  useEffect(() => {
+    const speed = deleting ? 60 : 120;
+    const timer = setTimeout(() => {
+      if (!deleting) {
+        if (visibleCount < suffix.length) {
+          setVisibleCount((v) => v + 1);
+        } else {
+          setTimeout(() => setDeleting(true), 1500);
+        }
+      } else {
+        if (visibleCount > 0) {
+          setVisibleCount((v) => v - 1);
+        } else {
+          setDeleting(false);
+        }
+      }
+    }, speed);
+    return () => clearTimeout(timer);
+  }, [visibleCount, deleting]);
+
+  return (
+    <span className="block">
+      <span className="text-gradient animate-gradient bg-clip-text">Dev</span>
+      <span className="text-accent animate-blink">_</span>
+      <span className="text-gradient animate-gradient bg-clip-text">
+        {suffix.slice(0, visibleCount)}
+      </span>
+    </span>
+  );
+};
 
 export const Hero = () => {
   return (
@@ -30,14 +67,11 @@ export const Hero = () => {
             <span className="text-primary">.NET</span> · <span className="text-accent">Angular</span> · <span className="text-purple-400">Full Stack</span>
           </p>
 
-          {/* Main heading - Full Stack Dev_ with cursor */}
+          {/* Main heading - Full Stack Dev_ with typing ELOPER */}
           <h1 className="font-sans font-black uppercase tracking-tight text-5xl md:text-7xl lg:text-8xl leading-[1.05] mb-6 animate-clip-reveal" style={{ animationDelay: "0.3s" }}>
             <span className="block text-foreground">Full</span>
             <span className="block text-foreground">Stack</span>
-            <span className="block">
-              <span className="text-gradient animate-gradient bg-clip-text">Dev_</span>
-              <span className="inline-block align-baseline ml-2 w-[0.12em] h-[0.85em] bg-accent animate-blink translate-y-[0.08em]" />
-            </span>
+            <TypingDev />
           </h1>
 
           {/* Rolling tagline */}

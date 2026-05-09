@@ -8,13 +8,13 @@ const TypingDev = () => {
   const [deleting, setDeleting] = useState(false);
 
   useEffect(() => {
-    const speed = deleting ? 60 : 120;
+    const speed = deleting ? 50 : 150;
     const timer = setTimeout(() => {
       if (!deleting) {
         if (visibleCount < suffix.length) {
           setVisibleCount((v) => v + 1);
         } else {
-          setTimeout(() => setDeleting(true), 1500);
+          setTimeout(() => setDeleting(true), 2000);
         }
       } else {
         if (visibleCount > 0) {
@@ -30,10 +30,10 @@ const TypingDev = () => {
   return (
     <span className="block">
       <span className="text-gradient animate-gradient bg-clip-text">Dev</span>
-      <span className="text-accent animate-blink">_</span>
       <span className="text-gradient animate-gradient bg-clip-text">
         {suffix.slice(0, visibleCount)}
       </span>
+      <span className="text-accent animate-blink">_</span>
     </span>
   );
 };
@@ -136,7 +136,7 @@ export const Hero = () => {
         </div>
 
         {/* Profile image - slide in from right */}
-        <div className="relative flex justify-center lg:justify-end animate-slide-in-right" style={{ animationDelay: "0.4s" }}>
+        <div className="relative flex justify-center lg:justify-end lg:-mt-16 animate-slide-in-right" style={{ animationDelay: "0.4s" }}>
           <div className="relative">
             {/* Animated glow behind image */}
             <div className="absolute inset-0 bg-gradient-to-br from-primary/40 to-accent/30 blur-3xl rounded-full animate-pulse" style={{ animationDuration: "4s" }} />

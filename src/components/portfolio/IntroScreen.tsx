@@ -36,14 +36,14 @@ export const IntroScreen = ({ onComplete }: IntroScreenProps) => {
   useEffect(() => {
     const nameDuration = fullName.length * 80 + 400;
     taglineWords.forEach((_, i) => {
-      setTimeout(() => setVisibleWords((v) => v + 1), nameDuration + i * 350);
+      setTimeout(() => setVisibleWords((v) => v + 1), nameDuration + i * 700);
     });
   }, []);
 
   // Exit after everything is shown
   useEffect(() => {
     const nameDuration = fullName.length * 80 + 400;
-    const taglineDuration = taglineWords.length * 350 + 800;
+    const taglineDuration = taglineWords.length * 700 + 800;
     const totalDuration = nameDuration + taglineDuration + 600;
     const exitTimer = setTimeout(() => setPhase("exit"), totalDuration);
     const completeTimer = setTimeout(handleComplete, totalDuration + 800);

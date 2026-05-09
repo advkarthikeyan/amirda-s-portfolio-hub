@@ -43,11 +43,17 @@ export const Contact = () => {
         </p>
         <h2
           ref={heading.ref}
-          className={`font-display text-4xl md:text-7xl mb-8 max-w-3xl reveal ${heading.visible ? "is-visible" : ""}`}
+          className={`font-display text-4xl md:text-7xl mb-6 max-w-3xl reveal ${heading.visible ? "is-visible" : ""}`}
           style={{ transitionDelay: "0.2s" }}
         >
-          Let's build <span className="text-gradient italic animate-gradient">something</span> together.
+          Let's build <span className="text-primary italic animate-gradient">something</span> together.
         </h2>
+        <p
+          className="font-display text-2xl md:text-4xl mb-8 max-w-3xl text-muted-foreground reveal-blur"
+          style={{ transitionDelay: "0.25s" }}
+        >
+          I build. I scale. I <span className="text-foreground">ship</span> software.
+        </p>
         <p className="text-lg text-muted-foreground max-w-xl mb-12 reveal-blur" style={{ transitionDelay: "0.3s" }}>
           Open to Full Stack Developer opportunities, freelance contracts and collaborations.
         </p>

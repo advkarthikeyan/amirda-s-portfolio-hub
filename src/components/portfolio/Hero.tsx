@@ -74,21 +74,16 @@ export const Hero = () => {
             <TypingDev />
           </h1>
 
-          {/* Kinetic typography tagline */}
+          {/* Kinetic typography tagline - upward scroll one by one */}
           <div
-            className="font-display text-3xl md:text-5xl lg:text-6xl font-semibold mb-8 text-accent overflow-hidden"
+            className="font-display text-xl md:text-2xl lg:text-3xl font-semibold mb-8 text-accent h-[1.3em] overflow-hidden"
             aria-label="I build. I scale. I ship software."
           >
-            <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-              {"I build. I scale. I ship software.".split(" ").map((word, i) => (
-                <span
-                  key={i}
-                  className="inline-block kinetic-word"
-                  style={{ animationDelay: `${0.5 + i * 0.12}s` }}
-                >
-                  {word}
-                </span>
-              ))}
+            <div className="animate-kinetic-roll leading-[1.3]">
+              <div>I build.</div>
+              <div>I scale.</div>
+              <div>I ship software.</div>
+              <div>I build.</div>
             </div>
           </div>
 

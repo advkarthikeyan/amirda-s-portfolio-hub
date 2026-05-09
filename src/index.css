@@ -184,29 +184,16 @@ All colors MUST be HSL.
     animation: pulse-ring 2s cubic-bezier(0.22, 1, 0.36, 1) infinite;
   }
 
-  /* Kinetic typography - words fly in with rotation and scale */
-  @keyframes kinetic-in {
-    0% {
-      opacity: 0;
-      transform: translateY(60px) rotateX(-40deg) scale(0.7);
-      filter: blur(8px);
-    }
-    60% {
-      opacity: 1;
-      transform: translateY(-4px) rotateX(4deg) scale(1.04);
-      filter: blur(0);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0) rotateX(0deg) scale(1);
-      filter: blur(0);
-    }
+  /* Kinetic typography - upward scroll one by one */
+  @keyframes kinetic-roll {
+    0%, 26%   { transform: translateY(0%); }
+    33%, 59%  { transform: translateY(-100%); }
+    66%, 92%  { transform: translateY(-200%); }
+    100%      { transform: translateY(-300%); }
   }
 
-  .kinetic-word {
-    opacity: 0;
-    transform-origin: bottom center;
-    animation: kinetic-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  .animate-kinetic-roll {
+    animation: kinetic-roll 6s cubic-bezier(0.65, 0, 0.35, 1) infinite;
   }
 
   /* Spin slow */

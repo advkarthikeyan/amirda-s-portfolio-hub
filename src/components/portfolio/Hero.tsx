@@ -30,14 +30,31 @@ export const Hero = () => {
             <span className="text-primary">.NET</span> · <span className="text-accent">Angular</span> · <span className="text-purple-400">Full Stack</span>
           </p>
 
-          {/* Main heading - clip reveal */}
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl leading-[1.05] mb-8 animate-clip-reveal" style={{ animationDelay: "0.3s" }}>
-            I build.
-            <br />
-            I scale.
-            <br />
-            I<em className="text-gradient not-italic font-semibold ml-3 md:ml-5 animate-gradient">ship</em> software.
+          {/* Main heading - Full Stack Dev_ with cursor */}
+          <h1 className="font-sans font-black uppercase tracking-tight text-5xl md:text-7xl lg:text-8xl leading-[1.05] mb-6 animate-clip-reveal" style={{ animationDelay: "0.3s" }}>
+            <span className="block text-foreground">Full</span>
+            <span className="block text-foreground">Stack</span>
+            <span className="block">
+              <span className="text-gradient animate-gradient bg-clip-text">Dev_</span>
+              <span className="inline-block align-baseline ml-2 w-[0.12em] h-[0.85em] bg-accent animate-blink translate-y-[0.08em]" />
+            </span>
           </h1>
+
+          {/* Rolling tagline */}
+          <div
+            className="font-display text-3xl md:text-5xl lg:text-6xl font-semibold mb-8 h-[1.2em] overflow-hidden animate-blur-in"
+            style={{ animationDelay: "0.45s" }}
+            aria-label="I build. I scale. I ship software."
+          >
+            <div className="animate-text-roll leading-[1.2]">
+              <div>I build.</div>
+              <div>I scale.</div>
+              <div>
+                I <em className="text-gradient not-italic font-bold animate-gradient">ship</em> software.
+              </div>
+              <div>I build.</div>
+            </div>
+          </div>
 
           {/* Description - blur in */}
           <p

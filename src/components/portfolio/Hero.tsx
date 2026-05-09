@@ -31,12 +31,12 @@ export const Hero = () => {
           </p>
 
           {/* Main heading - clip reveal */}
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl leading-[1.05] mb-8 animate-clip-reveal" style={{ animationDelay: "0.3s" }}>
-            I build.
+          <h1 className="font-display font-black text-6xl md:text-8xl lg:text-9xl leading-[0.95] mb-8 animate-clip-reveal tracking-tight" style={{ animationDelay: "0.3s" }}>
+            FULL
             <br />
-            I scale.
+            STACK
             <br />
-            I<em className="text-gradient not-italic font-semibold ml-3 md:ml-5 animate-gradient">ship</em> software.
+            DEV<span className="text-primary">_</span>
           </h1>
 
           {/* Description - blur in */}

@@ -118,7 +118,7 @@ export default {
         "enter": "fade-in 0.5s ease-out, scale-in 0.5s ease-out",
       },
       fontFamily: {
-        display: ["Fraunces", "Georgia", "serif"],
+        display: ["JetBrains Mono", "ui-monospace", "monospace"],
         sans: ["Inter", "system-ui", "sans-serif"],
         mono: ["JetBrains Mono", "monospace"],
       },
